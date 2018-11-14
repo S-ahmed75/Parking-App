@@ -1,0 +1,475 @@
+
+/* Class = "UILabel"; text = "You need to sign in or create"; ObjectID = "1h2-xv-pjd"; */
+"1h2-xv-pjd.text" = "You need to sign in or create";
+
+/* Class = "UITextView"; text = "Below is a list of all your parking space listings. Under the title of each listing are a number of ations that you are able to make including editing the parking space details, photos, availiablity and showing or hiding your listing in our search engine."; ObjectID = "20R-8g-gkh"; */
+"20R-8g-gkh.text" = "Below is a list of all your parking space listings. Under the title of each listing are a number of ations that you are able to make including editing the parking space details, photos, availiablity and showing or hiding your listing in our search engine.";
+
+/* Class = "UITextField"; placeholder = "Select Address"; ObjectID = "2Ra-I6-z8g"; */
+"2Ra-I6-z8g.placeholder" = "Select Address";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "2Ra-I6-z8g"; */
+"2Ra-I6-z8g.text" = "1";
+
+/* Class = "UILabel"; text = "Second name"; ObjectID = "2du-WU-zod"; */
+"2du-WU-zod.text" = "Second name";
+
+/* Class = "UIButton"; normalTitle = "Language"; ObjectID = "357-2Z-tYd"; */
+"357-2Z-tYd.normalTitle" = "Language";
+
+/* Class = "UILabel"; text = "Where are you parking?"; ObjectID = "3TJ-rq-dwo"; */
+"3TJ-rq-dwo.text" = "Where are you parking?";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "4QJ-QN-CNs"; */
+"4QJ-QN-CNs.title" = "Item";
+
+/* Class = "UISegmentedControl"; 4RN-Zc-Bzh.segmentTitles[0] = "Driveway"; ObjectID = "4RN-Zc-Bzh"; */
+"4RN-Zc-Bzh.segmentTitles[0]" = "Driveway";
+
+/* Class = "UISegmentedControl"; 4RN-Zc-Bzh.segmentTitles[1] = "Garage"; ObjectID = "4RN-Zc-Bzh"; */
+"4RN-Zc-Bzh.segmentTitles[1]" = "Garage";
+
+/* Class = "UISegmentedControl"; 4RN-Zc-Bzh.segmentTitles[2] = "Car Park"; ObjectID = "4RN-Zc-Bzh"; */
+"4RN-Zc-Bzh.segmentTitles[2]" = "Car Park";
+
+/* Class = "UILabel"; text = "Width of space"; ObjectID = "4WH-9M-JzY"; */
+"4WH-9M-JzY.text" = "Width of space";
+
+/* Class = "UINavigationItem"; title = "Booking Detail"; ObjectID = "4f4-NM-sgH"; */
+"4f4-NM-sgH.title" = "Booking Detail";
+
+/* Class = "UITextField"; placeholder = "Enter Price"; ObjectID = "4k8-Kq-Hm2"; */
+"4k8-Kq-Hm2.placeholder" = "Enter Price";
+
+/* Class = "UITextField"; text = "30"; ObjectID = "4k8-Kq-Hm2"; */
+"4k8-Kq-Hm2.text" = "30";
+
+/* Class = "UISegmentedControl"; 4li-dJ-jW2.segmentTitles[0] = "Normal"; ObjectID = "4li-dJ-jW2"; */
+"4li-dJ-jW2.segmentTitles[0]" = "Normal";
+
+/* Class = "UISegmentedControl"; 4li-dJ-jW2.segmentTitles[1] = "Narrow"; ObjectID = "4li-dJ-jW2"; */
+"4li-dJ-jW2.segmentTitles[1]" = "Narrow";
+
+/* Class = "UILabel"; text = "Sign In"; ObjectID = "4pO-SG-wQK"; */
+"4pO-SG-wQK.text" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "Rent out your space"; ObjectID = "51D-HY-srV"; */
+"51D-HY-srV.normalTitle" = "Rent out your space";
+
+/* Class = "UITextField"; placeholder = "Enter Leaving Date"; ObjectID = "5EY-Fx-xo1"; */
+"5EY-Fx-xo1.placeholder" = "Enter Leaving Date";
+
+/* Class = "UILabel"; text = "per day"; ObjectID = "6nu-3F-NLK"; */
+"6nu-3F-NLK.text" = "per day";
+
+/* Class = "UIButton"; normalTitle = "Activate"; ObjectID = "71q-js-eHn"; */
+"71q-js-eHn.normalTitle" = "Activate";
+
+/* Class = "UISegmentedControl"; 7Xl-ZY-sj2.segmentTitles[0] = "Driveway"; ObjectID = "7Xl-ZY-sj2"; */
+"7Xl-ZY-sj2.segmentTitles[0]" = "Driveway";
+
+/* Class = "UISegmentedControl"; 7Xl-ZY-sj2.segmentTitles[1] = "Garage"; ObjectID = "7Xl-ZY-sj2"; */
+"7Xl-ZY-sj2.segmentTitles[1]" = "Garage";
+
+/* Class = "UISegmentedControl"; 7Xl-ZY-sj2.segmentTitles[2] = "Car Park"; ObjectID = "7Xl-ZY-sj2"; */
+"7Xl-ZY-sj2.segmentTitles[2]" = "Car Park";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "7hA-xe-GzQ"; */
+"7hA-xe-GzQ.placeholder" = "Enter Password";
+
+/* Class = "UILabel"; text = "Parking App"; ObjectID = "7qa-6p-t3g"; */
+"7qa-6p-t3g.text" = "Parking App";
+
+/* Class = "UILabel"; text = "Not yet reviewed"; ObjectID = "7tC-lj-Hyy"; */
+"7tC-lj-Hyy.text" = "Not yet reviewed";
+
+/* Class = "UIButton"; normalTitle = "I disagree"; ObjectID = "7u7-c5-6Vw"; */
+"7u7-c5-6Vw.normalTitle" = "I disagree";
+
+/* Class = "UIButton"; normalTitle = "I agree"; ObjectID = "8ef-M5-7Jd"; */
+"8ef-M5-7Jd.normalTitle" = "I agree";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "90Y-WO-8Wo"; */
+"90Y-WO-8Wo.text" = "Address";
+
+/* Class = "UITextField"; placeholder = "Select Address"; ObjectID = "9cN-Ql-VxZ"; */
+"9cN-Ql-VxZ.placeholder" = "Select Address";
+
+/* Class = "UILabel"; text = "Adress"; ObjectID = "AbW-5P-cDi"; */
+"AbW-5P-cDi.text" = "Adress";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "BEl-oy-d36"; */
+"BEl-oy-d36.normalTitle" = "Log In";
+
+/* Class = "UILabel"; text = "WHERE IS YOUR PARKING SPACE?"; ObjectID = "BLm-7a-Vxk"; */
+"BLm-7a-Vxk.text" = "WHERE IS YOUR PARKING SPACE?";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "DJ6-JW-NIc"; */
+"DJ6-JW-NIc.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "I disagree"; ObjectID = "DVJ-Q3-N0V"; */
+"DVJ-Q3-N0V.normalTitle" = "I disagree";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "Dkm-ai-j0w"; */
+"Dkm-ai-j0w.normalTitle" = "Log out";
+
+/* Class = "UILabel"; text = "driveaway on 11,SE16"; ObjectID = "E6w-ea-VoS"; */
+"E6w-ea-VoS.text" = "driveaway on 11,SE16";
+
+/* Class = "UIButton"; normalTitle = "Enter a destination or location ID"; ObjectID = "ED8-LR-y9t"; */
+"ED8-LR-y9t.normalTitle" = "Enter a destination or location ID";
+
+/* Class = "UIButton"; normalTitle = "Add another space"; ObjectID = "F3b-NH-0Gw"; */
+"F3b-NH-0Gw.normalTitle" = "Add another space";
+
+/* Class = "UILabel"; text = "Per hour"; ObjectID = "FmD-Ca-j7b"; */
+"FmD-Ca-j7b.text" = "Per hour";
+
+/* Class = "UILabel"; text = "Arriving"; ObjectID = "Fq9-jz-uhc"; */
+"Fq9-jz-uhc.text" = "Arriving";
+
+/* Class = "UITextField"; placeholder = "select country"; ObjectID = "Fww-gR-jip"; */
+"Fww-gR-jip.placeholder" = "select country";
+
+/* Class = "UITextField"; placeholder = "Enter Price"; ObjectID = "GyH-cS-wgQ"; */
+"GyH-cS-wgQ.placeholder" = "Enter Price";
+
+/* Class = "UITextField"; text = "100"; ObjectID = "GyH-cS-wgQ"; */
+"GyH-cS-wgQ.text" = "100";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "H3b-qo-bnk"; */
+"H3b-qo-bnk.text" = "Title";
+
+/* Class = "UILabel"; text = "ABOUT YOU"; ObjectID = "Hj7-Ry-BS7"; */
+"Hj7-Ry-BS7.text" = "ABOUT YOU";
+
+/* Class = "UILabel"; text = "PRICING"; ObjectID = "Hos-K1-4YL"; */
+"Hos-K1-4YL.text" = "PRICING";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "INu-KF-5We"; */
+"INu-KF-5We.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Recived Bookings"; ObjectID = "ItW-ZY-6Vz"; */
+"ItW-ZY-6Vz.normalTitle" = "Recived Bookings";
+
+/* Class = "UILabel"; text = "Parking App"; ObjectID = "JZ9-4q-QS8"; */
+"JZ9-4q-QS8.text" = "Parking App";
+
+/* Class = "UILabel"; text = "How we use your Parking"; ObjectID = "LIB-wW-jWR"; */
+"LIB-wW-jWR.text" = "How we use your Parking";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "LQl-rw-5Wl"; */
+"LQl-rw-5Wl.title" = "Item";
+
+/* Class = "UILabel"; text = "Number of spaces"; ObjectID = "LzF-w6-ROg"; */
+"LzF-w6-ROg.text" = "Number of spaces";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "MZc-Af-z6r"; */
+"MZc-Af-z6r.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Create account with email & phone number"; ObjectID = "Mlz-zR-xFC"; */
+"Mlz-zR-xFC.normalTitle" = "Create account with email & phone number";
+
+/* Class = "UILabel"; text = "To continue receiving bookings at your parking"; ObjectID = "NCz-ky-P2H"; */
+"NCz-ky-P2H.text" = "To continue receiving bookings at your parking";
+
+/* Class = "UIButton"; normalTitle = "Parking App"; ObjectID = "NHN-Lo-niD"; */
+"NHN-Lo-niD.normalTitle" = "Parking App";
+
+/* Class = "UIButton"; normalTitle = "Find Address"; ObjectID = "NNR-Kd-4r8"; */
+"NNR-Kd-4r8.normalTitle" = "Find Address";
+
+/* Class = "UILabel"; text = "You don't have any bookings yet"; ObjectID = "NVM-y9-2kb"; */
+"NVM-y9-2kb.text" = "You don't have any bookings yet";
+
+/* Class = "UILabel"; text = "First name"; ObjectID = "Nd8-lf-mzF"; */
+"Nd8-lf-mzF.text" = "First name";
+
+/* Class = "UITextField"; placeholder = "Enter Leaving Date"; ObjectID = "NjF-Od-5tP"; */
+"NjF-Od-5tP.placeholder" = "Enter Leaving Date";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "Nl4-sz-Jcm"; */
+"Nl4-sz-Jcm.placeholder" = "password";
+
+/* Class = "UITextField"; placeholder = "email or number"; ObjectID = "ODv-hU-Yrp"; */
+"ODv-hU-Yrp.placeholder" = "email or number";
+
+/* Class = "UILabel"; text = "Second name"; ObjectID = "OLJ-My-bNe"; */
+"OLJ-My-bNe.text" = "Second name";
+
+/* Class = "UILabel"; text = "You don't have any bookings yet"; ObjectID = "OZF-JB-sqX"; */
+"OZF-JB-sqX.text" = "You don't have any bookings yet";
+
+/* Class = "UILabel"; text = "Personal Detail"; ObjectID = "Opy-kM-6ch"; */
+"Opy-kM-6ch.text" = "Personal Detail";
+
+/* Class = "UIViewController"; title = "Modal view"; ObjectID = "OtK-0z-Q9q"; */
+"OtK-0z-Q9q.title" = "Modal view";
+
+/* Class = "UILabel"; text = "the money roll in!"; ObjectID = "PE4-JR-pnq"; */
+"PE4-JR-pnq.text" = "the money roll in!";
+
+/* Class = "UIButton"; normalTitle = "Login in with email or phone number"; ObjectID = "PyH-iS-fM0"; */
+"PyH-iS-fM0.normalTitle" = "Login in with email or phone number";
+
+/* Class = "UILabel"; text = "ABOUT YOUR SPACE"; ObjectID = "QRa-AP-zeI"; */
+"QRa-AP-zeI.text" = "ABOUT YOUR SPACE";
+
+/* Class = "UILabel"; text = "To finish creating your Parking app account ,you"; ObjectID = "Qqj-VH-bmz"; */
+"Qqj-VH-bmz.text" = "To finish creating your Parking app account ,you";
+
+/* Class = "UIButton"; normalTitle = "I agree"; ObjectID = "Qzp-ld-yAU"; */
+"Qzp-ld-yAU.normalTitle" = "I agree";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "RSy-wp-9Us"; */
+"RSy-wp-9Us.title" = "Item";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "YWg-jy-5Rt"; */
+"YWg-jy-5Rt.title" = "eng";
+
+
+/* Class = "UILabel"; text = "Type of space"; ObjectID = "RmT-L8-dbI"; */
+"RmT-L8-dbI.text" = "Type of space";
+
+/* Class = "UINavigationItem"; title = "Choose Types"; ObjectID = "S0o-wg-itl"; */
+"S0o-wg-itl.title" = "Choose Types";
+
+/* Class = "UILabel"; text = "*********"; ObjectID = "Sbn-3b-TOe"; */
+"Sbn-3b-TOe.text" = "*********";
+
+/* Class = "UIButton"; normalTitle = "Photos"; ObjectID = "TWk-eW-dXW"; */
+"TWk-eW-dXW.normalTitle" = "Photos";
+
+/* Class = "UIButton"; normalTitle = "Help"; ObjectID = "U1O-Lh-INC"; */
+"U1O-Lh-INC.normalTitle" = "Help";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "UGL-qh-q1M"; */
+"UGL-qh-q1M.normalTitle" = "Home";
+
+/* Class = "UITextField"; placeholder = "Your last name"; ObjectID = "UGz-QN-V5q"; */
+"UGz-QN-V5q.placeholder" = "Your last name";
+
+/* Class = "UIButton"; normalTitle = "INSTANT BOOKINGS"; ObjectID = "UX5-1Z-CCe"; */
+"UX5-1Z-CCe.normalTitle" = "INSTANT BOOKINGS";
+
+/* Class = "UIButton"; normalTitle = "Find Parkings"; ObjectID = "Uhi-6q-kim"; */
+"Uhi-6q-kim.normalTitle" = "Find Parkings";
+
+/* Class = "UILabel"; text = "Rent out your space"; ObjectID = "VYP-yD-Iz6"; */
+"VYP-yD-Iz6.text" = "Rent out your space";
+
+/* Class = "UILabel"; text = "I am a..."; ObjectID = "VqN-Mv-qVn"; */
+"VqN-Mv-qVn.text" = "I am a...";
+
+/* Class = "UITextField"; placeholder = "Your first name"; ObjectID = "WYu-Nu-vFm"; */
+"WYu-Nu-vFm.placeholder" = "Your first name";
+
+/* Class = "UILabel"; text = "Phone number"; ObjectID = "X6t-J7-l3J"; */
+"X6t-J7-l3J.text" = "Phone number";
+
+/* Class = "UILabel"; text = "$8.00"; ObjectID = "XD8-Db-vZW"; */
+"XD8-Db-vZW.text" = "$8.00";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "XPc-aV-4ug"; */
+"XPc-aV-4ug.text" = "Email";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Xom-h0-cBB"; */
+"Xom-h0-cBB.text" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Manage my space"; ObjectID = "Y2m-WL-TLb"; */
+"Y2m-WL-TLb.normalTitle" = "Manage my space";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Y5n-re-nnP"; */
+"Y5n-re-nnP.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "My bookings"; ObjectID = "YSs-ne-zrl"; */
+"YSs-ne-zrl.normalTitle" = "My bookings";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "YWg-jy-5Rt"; */
+"YWg-jy-5Rt.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Select Address"; ObjectID = "YYO-C7-jEr"; */
+"YYO-C7-jEr.placeholder" = "Select Address";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "YYO-C7-jEr"; */
+"YYO-C7-jEr.text" = "1";
+
+/* Class = "UILabel"; text = "Fill a few quick details and then sit back to watch"; ObjectID = "YdA-7x-5sL"; */
+"YdA-7x-5sL.text" = "Fill a few quick details and then sit back to watch";
+
+/* Class = "UILabel"; text = "First name"; ObjectID = "ZRN-sF-JG2"; */
+"ZRN-sF-JG2.text" = "First name";
+
+/* Class = "UILabel"; text = "Last name"; ObjectID = "a9M-bS-rco"; */
+"a9M-bS-rco.text" = "Last name";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\""; ObjectID = "aCr-jo-Avp"; */
+"aCr-jo-Avp.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\"";
+
+/* Class = "UILabel"; text = "Adress"; ObjectID = "abr-EN-LKM"; */
+"abr-EN-LKM.text" = "Adress";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bU5-gK-XRt"; */
+"bU5-gK-XRt.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "an account to continue."; ObjectID = "d0f-Oz-OAk"; */
+"d0f-Oz-OAk.text" = "an account to continue.";
+
+/* Class = "UILabel"; text = "Leaving"; ObjectID = "e0u-dS-imm"; */
+"e0u-dS-imm.text" = "Leaving";
+
+/* Class = "UILabel"; text = "Number of spaces"; ObjectID = "eHZ-nS-z2a"; */
+"eHZ-nS-z2a.text" = "Number of spaces";
+
+/* Class = "UITextField"; placeholder = "Enter your email "; ObjectID = "ejL-B4-b17"; */
+"ejL-B4-b17.placeholder" = "Enter your email ";
+
+/* Class = "UILabel"; text = "First name"; ObjectID = "ekk-lN-h2a"; */
+"ekk-lN-h2a.text" = "First name";
+
+/* Class = "UILabel"; text = "Select country"; ObjectID = "enQ-OG-Qul"; */
+"enQ-OG-Qul.text" = "Select country";
+
+/* Class = "UILabel"; text = "Per day"; ObjectID = "fBN-rL-RDo"; */
+"fBN-rL-RDo.text" = "Per day";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "fCK-M4-csI"; */
+"fCK-M4-csI.normalTitle" = "Sign In";
+
+/* Class = "UITextField"; placeholder = "Your phone"; ObjectID = "fam-wI-FqR"; */
+"fam-wI-FqR.placeholder" = "Your phone";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\""; ObjectID = "gd1-ds-ZPt"; */
+"gd1-ds-ZPt.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\"";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "h3r-zR-KeQ"; */
+"h3r-zR-KeQ.normalTitle" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Rent your space"; ObjectID = "hZw-ZG-rWE"; */
+"hZw-ZG-rWE.normalTitle" = "Rent your space";
+
+/* Class = "UITextField"; placeholder = "Enter Arrving Date"; ObjectID = "hfr-i2-YN4"; */
+"hfr-i2-YN4.placeholder" = "Enter Arrving Date";
+
+/* Class = "UILabel"; text = "My name"; ObjectID = "i9I-0B-uuX"; */
+"i9I-0B-uuX.text" = "My name";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "lab-CB-ck6"; */
+"lab-CB-ck6.normalTitle" = "Edit";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "lol-T3-Ywb"; */
+"lol-T3-Ywb.title" = "Item";
+
+/* Class = "UILabel"; text = "Type of space"; ObjectID = "m2i-Tf-g9B"; */
+"m2i-Tf-g9B.text" = "Type of space";
+
+/* Class = "UILabel"; text = "Payment Options"; ObjectID = "m7f-4Q-asC"; */
+"m7f-4Q-asC.text" = "Payment Options";
+
+/* Class = "UITextField"; placeholder = "Enter your last name"; ObjectID = "mWM-6X-Qrw"; */
+"mWM-6X-Qrw.placeholder" = "Enter your last name";
+
+/* Class = "UIButton"; normalTitle = "Add your space"; ObjectID = "mmk-UB-pub"; */
+"mmk-UB-pub.normalTitle" = "Add your space";
+
+/* Class = "UILabel"; text = "Acount Data..."; ObjectID = "n2U-Hi-eSv"; */
+"n2U-Hi-eSv.text" = "Acount Data...";
+
+/* Class = "UITextField"; placeholder = "Enter your first name"; ObjectID = "oA6-ow-oMc"; */
+"oA6-ow-oMc.placeholder" = "Enter your first name";
+
+/* Class = "UILabel"; text = "Parking App"; ObjectID = "pFH-rA-fyZ"; */
+"pFH-rA-fyZ.text" = "Parking App";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "pOP-h4-z9E"; */
+"pOP-h4-z9E.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "I am a..."; ObjectID = "paq-QQ-SCA"; */
+"paq-QQ-SCA.text" = "I am a...";
+
+/* Class = "UITextField"; placeholder = "Enter Arrving Date"; ObjectID = "pwD-0D-gSx"; */
+"pwD-0D-gSx.placeholder" = "Enter Arrving Date";
+
+/* Class = "UILabel"; text = "Arriving"; ObjectID = "qSI-qg-bvh"; */
+"qSI-qg-bvh.text" = "Arriving";
+
+/* Class = "UITextField"; placeholder = "Enter Price"; ObjectID = "qcn-eS-Kfk"; */
+"qcn-eS-Kfk.placeholder" = "Enter Price";
+
+/* Class = "UITextField"; text = "18"; ObjectID = "qcn-eS-Kfk"; */
+"qcn-eS-Kfk.text" = "18";
+
+/* Class = "UILabel"; text = "Per week"; ObjectID = "qvH-oV-Fnv"; */
+"qvH-oV-Fnv.text" = "Per week";
+
+/* Class = "UILabel"; text = "edit your space"; ObjectID = "rjG-qU-Qa6"; */
+"rjG-qU-Qa6.text" = "edit your space";
+
+/* Class = "UILabel"; text = "Welcome Back!"; ObjectID = "swx-oC-bgO"; */
+"swx-oC-bgO.text" = "Welcome Back!";
+
+/* Class = "UILabel"; text = "Personnel Details"; ObjectID = "uLB-6g-hK7"; */
+"uLB-6g-hK7.text" = "Personnel Details";
+
+/* Class = "UILabel"; text = "Leaving"; ObjectID = "uUV-Oa-gN2"; */
+"uUV-Oa-gN2.text" = "Leaving";
+
+/* Class = "UILabel"; text = "Width of space"; ObjectID = "ueK-KN-mK1"; */
+"ueK-KN-mK1.text" = "Width of space";
+
+/* Class = "UILabel"; text = "Let's get you logged in."; ObjectID = "uhE-OI-mF6"; */
+"uhE-OI-mF6.text" = "Let's get you logged in.";
+
+/* Class = "UISegmentedControl"; uqx-Tc-MLt.segmentTitles[0] = "Individual Owner"; ObjectID = "uqx-Tc-MLt"; */
+"uqx-Tc-MLt.segmentTitles[0]" = "Individual Owner";
+
+/* Class = "UISegmentedControl"; uqx-Tc-MLt.segmentTitles[1] = "Business / Organization"; ObjectID = "uqx-Tc-MLt"; */
+"uqx-Tc-MLt.segmentTitles[1]" = "Business / Organization";
+
+/* Class = "UILabel"; text = "ABOUT YOUR SPACE"; ObjectID = "usK-iE-dzk"; */
+"usK-iE-dzk.text" = "ABOUT YOUR SPACE";
+
+/* Class = "UILabel"; text = "How we use your Core"; ObjectID = "uvw-FZ-lzy"; */
+"uvw-FZ-lzy.text" = "How we use your Core";
+
+/* Class = "UILabel"; text = "                                              "; ObjectID = "uy7-aq-ljx"; */
+"uy7-aq-ljx.text" = "                                              ";
+
+/* Class = "UIButton"; normalTitle = "Availability"; ObjectID = "vDh-co-ywW"; */
+"vDh-co-ywW.normalTitle" = "Availability";
+
+/* Class = "UILabel"; text = "Payment Options"; ObjectID = "vI9-Jd-ssc"; */
+"vI9-Jd-ssc.text" = "Payment Options";
+
+/* Class = "UILabel"; text = "must agree to the above."; ObjectID = "vka-Ig-IxQ"; */
+"vka-Ig-IxQ.text" = "must agree to the above.";
+
+/* Class = "UILabel"; text = "space, you must agree to the above."; ObjectID = "w5u-1W-RWY"; */
+"w5u-1W-RWY.text" = "space, you must agree to the above.";
+
+/* Class = "UILabel"; text = "Parking spaces"; ObjectID = "wUP-Sj-q35"; */
+"wUP-Sj-q35.text" = "Parking spaces";
+
+/* Class = "UISegmentedControl"; wVz-xh-98W.segmentTitles[0] = "Normal"; ObjectID = "wVz-xh-98W"; */
+"wVz-xh-98W.segmentTitles[0]" = "Normal";
+
+/* Class = "UISegmentedControl"; wVz-xh-98W.segmentTitles[1] = "Narrow"; ObjectID = "wVz-xh-98W"; */
+"wVz-xh-98W.segmentTitles[1]" = "Narrow";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wgj-TG-YCC"; */
+"wgj-TG-YCC.text" = "Label";
+
+/* Class = "UILabel"; text = "Space Listing Data..."; ObjectID = "xZf-Ub-dDZ"; */
+"xZf-Ub-dDZ.text" = "Space Listing Data...";
+
+/* Class = "UISegmentedControl"; zbp-La-8AT.segmentTitles[0] = "Individual Owner"; ObjectID = "zbp-La-8AT"; */
+"zbp-La-8AT.segmentTitles[0]" = "Individual Owner";
+
+/* Class = "UISegmentedControl"; zbp-La-8AT.segmentTitles[1] = "Business / Organization"; ObjectID = "zbp-La-8AT"; */
+"zbp-La-8AT.segmentTitles[1]" = "Business / Organization";
+
+/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "ziJ-DS-f4j"; */
+"ziJ-DS-f4j.normalTitle" = "Pay";
+
+/* Class = "UILabel"; text = "WERE IS YOUR PARKING SPACE?"; ObjectID = "zr4-d7-3Qc"; */
+"zr4-d7-3Qc.text" = "WERE IS YOUR PARKING SPACE?";
