@@ -10,6 +10,9 @@
 		0FA026C134EFF7D72E6F5B58 /* Pods_Parking_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB85117BBC302F73C08E415 /* Pods_Parking_AppTests.framework */; };
 		4DF0D80F7870A4E3399CEEAC /* Pods_Parking_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9316EBD4E1C5741B39CF6 /* Pods_Parking_AppUITests.framework */; };
 		50A8D49211520ED61D7A107E /* Pods_Parking_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2457E72844DDEA6F8F309A7 /* Pods_Parking_App.framework */; };
+		78D1570F219D71FB00F2FA00 /* RentSpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */; };
+		78D15710219D71FB00F2FA00 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */; };
+		78D15711219D71FB00F2FA00 /* RentSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */; };
 		9E62D8772158D9C400629CD2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62D8762158D9C400629CD2 /* ProfileViewController.swift */; };
 		9E6589F621491FD700D02227 /* MapViewControllerxxxx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6589F521491FD700D02227 /* MapViewControllerxxxx.swift */; };
 		9E7753A22147E9CB00F01830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7753A12147E9CB00F01830 /* AppDelegate.swift */; };
@@ -41,8 +44,6 @@
 		A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353F3CA219AF1E600CB4E93 /* constant.swift */; };
 		A3A01956218B61E4006E3786 /* L102Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01954218B61E4006E3786 /* L102Language.swift */; };
 		A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01955218B61E4006E3786 /* L012Localizer.swift */; };
-		A3BC82C72187755F00A54B25 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC82C52187755E00A54B25 /* EditTableViewController.swift */; };
-		A3BC82C82187755F00A54B25 /* RentSpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC82C62187755E00A54B25 /* RentSpaceTableViewController.swift */; };
 		A3D8C73E218F4ABF00E0CDCA /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */; };
 		A3D8C73F218F4ABF00E0CDCA /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D8C73C218F4ABF00E0CDCA /* MarkerInfoView.xib */; };
 		A3D8C740218F4ABF00E0CDCA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8C73D218F4ABF00E0CDCA /* UIViewExtension.swift */; };
@@ -72,6 +73,9 @@
 
 /* Begin PBXFileReference section */
 		213742BBDEC4361D76F1BADA /* Pods-Parking AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parking AppTests/Pods-Parking AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSpaceTableViewController.swift; sourceTree = "<group>"; };
+		78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
+		78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSpaceViewController.swift; sourceTree = "<group>"; };
 		977BDE089F9A0199BBD52EBA /* Pods-Parking AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parking AppTests/Pods-Parking AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E62D8762158D9C400629CD2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9E6589F521491FD700D02227 /* MapViewControllerxxxx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerxxxx.swift; sourceTree = "<group>"; };
@@ -118,8 +122,6 @@
 		A353F3CA219AF1E600CB4E93 /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		A3A01954218B61E4006E3786 /* L102Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L102Language.swift; sourceTree = "<group>"; };
 		A3A01955218B61E4006E3786 /* L012Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L012Localizer.swift; sourceTree = "<group>"; };
-		A3BC82C52187755E00A54B25 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTableViewController.swift; path = ../../../Desktop/EditTableViewController.swift; sourceTree = "<group>"; };
-		A3BC82C62187755E00A54B25 /* RentSpaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentSpaceTableViewController.swift; path = ../../../Desktop/RentSpaceTableViewController.swift; sourceTree = "<group>"; };
 		A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		A3D8C73C218F4ABF00E0CDCA /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		A3D8C73D218F4ABF00E0CDCA /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -199,6 +201,9 @@
 		9E7753A02147E9CB00F01830 /* Parking App */ = {
 			isa = PBXGroup;
 			children = (
+				78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */,
+				78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */,
+				78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */,
 				9E7753A12147E9CB00F01830 /* AppDelegate.swift */,
 				A353F3CA219AF1E600CB4E93 /* constant.swift */,
 				9E6589F521491FD700D02227 /* MapViewControllerxxxx.swift */,
@@ -219,8 +224,6 @@
 				9EB0AE68214D2597006F19DF /* MenuViewController.swift */,
 				9E62D8762158D9C400629CD2 /* ProfileViewController.swift */,
 				9EFEDCEF2158D23800C0E4A1 /* MyBookingsViewController.swift */,
-				A3BC82C52187755E00A54B25 /* EditTableViewController.swift */,
-				A3BC82C62187755E00A54B25 /* RentSpaceTableViewController.swift */,
 				9E9962F3215A56C1002C25A5 /* SelectAddressViewController.swift */,
 				9EB0AE60214D065A006F19DF /* EmailSignUpViewController.swift */,
 				9EB0AE62214D0667006F19DF /* EmailSignInViewController.swift */,
@@ -603,10 +606,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D1570F219D71FB00F2FA00 /* RentSpaceTableViewController.swift in Sources */,
 				9EE0F0B2215F83A200989BB8 /* ManagespaceTableViewCell.swift in Sources */,
 				9EAB236A215E45D50096B69F /* ManageSpaceViewController.swift in Sources */,
 				9E7753D22147F66F00F01830 /* LoginSingUpViewController.swift in Sources */,
 				9E9962F4215A56C1002C25A5 /* SelectAddressViewController.swift in Sources */,
+				78D15710219D71FB00F2FA00 /* EditTableViewController.swift in Sources */,
 				A3D8C74B218F4B1300E0CDCA /* MapViewController1.swift in Sources */,
 				9E7753A42147E9CB00F01830 /* ViewController.swift in Sources */,
 				A3D8C740218F4ABF00E0CDCA /* UIViewExtension.swift in Sources */,
@@ -615,7 +620,6 @@
 				9E9C0908214BB39800E2C319 /* SWRevealViewController.m in Sources */,
 				9E7753A22147E9CB00F01830 /* AppDelegate.swift in Sources */,
 				A3D8C745218F4B0100E0CDCA /* GoogleDataProvider.swift in Sources */,
-				A3BC82C82187755F00A54B25 /* RentSpaceTableViewController.swift in Sources */,
 				A3D8C747218F4B0100E0CDCA /* PlaceMarker.swift in Sources */,
 				A337EC622198AD1F00CAA696 /* ReachabilityManager.swift in Sources */,
 				9EAB236E215E52700096B69F /* ParkingTermsViewController.swift in Sources */,
@@ -625,7 +629,6 @@
 				A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */,
 				9EB0AE59214CEE22006F19DF /* roundView.swift in Sources */,
 				A32A3CFA219338C30058C5AC /* bookViewController.swift in Sources */,
-				A3BC82C72187755F00A54B25 /* EditTableViewController.swift in Sources */,
 				A3D8C746218F4B0100E0CDCA /* GooglePlace.swift in Sources */,
 				A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */,
 				A3A01956218B61E4006E3786 /* L102Language.swift in Sources */,
@@ -633,6 +636,7 @@
 				A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */,
 				A3D8C74C218F4B1300E0CDCA /* TypesTableViewController.swift in Sources */,
 				9EAB236C215E48360096B69F /* RecievedBookingsViewController.swift in Sources */,
+				78D15711219D71FB00F2FA00 /* RentSpaceViewController.swift in Sources */,
 				9EB0AE65214D17B6006F19DF /* TermsViewController.swift in Sources */,
 				9EB0AE61214D065A006F19DF /* EmailSignUpViewController.swift in Sources */,
 			);
