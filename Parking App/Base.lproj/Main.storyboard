@@ -1951,10 +1951,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ppk-V5-ppf">
-                                <rect key="frame" x="8" y="64" width="304" height="360"/>
+                                <rect key="frame" x="8" y="64" width="304" height="330"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personnel Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLB-6g-hK7" customClass="Design" customModule="Parking_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="42"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1968,69 +1968,66 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your first name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oA6-ow-oMc">
-                                        <rect key="frame" x="0.0" y="65" width="304" height="35"/>
+                                        <rect key="frame" x="0.0" y="72" width="304" height="42"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWM-6X-Qrw">
-                                        <rect key="frame" x="0.0" y="130" width="304" height="35"/>
+                                        <rect key="frame" x="0.0" y="144" width="304" height="42"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your email " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-B4-b17">
-                                        <rect key="frame" x="0.0" y="195" width="304" height="35"/>
+                                        <rect key="frame" x="0.0" y="216" width="304" height="42"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7hA-xe-GzQ">
-                                        <rect key="frame" x="0.0" y="260" width="304" height="35"/>
+                                        <rect key="frame" x="0.0" y="288" width="304" height="42"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ETG-L3-6Mn">
-                                        <rect key="frame" x="0.0" y="325" width="304" height="35"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-Um-7DM" userLabel="Next &gt;">
-                                                <rect key="frame" x="204" y="0.0" width="100" height="35"/>
-                                                <color key="backgroundColor" red="1" green="0.12549019607843137" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="1nb-Hy-NX3"/>
-                                                    <constraint firstAttribute="width" constant="100" id="dSt-jl-G6G"/>
-                                                </constraints>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Next &gt;">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <font key="NSFont" size="22" name="ArialMT"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="signUpbutton:" destination="fTe-4x-MaM" eventType="touchUpInside" id="J7H-Ga-U4B"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-Um-7DM" userLabel="Next &gt;">
+                                <rect key="frame" x="210" y="414" width="100" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.12549019607843137" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1nb-Hy-NX3"/>
+                                    <constraint firstAttribute="width" constant="100" id="dSt-jl-G6G"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Next &gt;">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="22" name="ArialMT"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpbutton:" destination="fTe-4x-MaM" eventType="touchUpInside" id="J7H-Ga-U4B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ppk-V5-ppf" firstAttribute="top" secondItem="JwQ-nP-Xve" secondAttribute="top" id="4Pb-nh-Kw8"/>
                             <constraint firstItem="JwQ-nP-Xve" firstAttribute="trailing" secondItem="Ppk-V5-ppf" secondAttribute="trailing" constant="8" id="ANk-iS-0Rr"/>
-                            <constraint firstItem="Ppk-V5-ppf" firstAttribute="height" secondItem="52V-CP-Ztn" secondAttribute="height" multiplier="0.6" id="E7k-tk-ne6"/>
+                            <constraint firstItem="Ppk-V5-ppf" firstAttribute="height" secondItem="52V-CP-Ztn" secondAttribute="height" multiplier="0.55" id="E7k-tk-ne6"/>
+                            <constraint firstItem="EPd-Um-7DM" firstAttribute="top" secondItem="Ppk-V5-ppf" secondAttribute="bottom" constant="20" id="EaX-rd-Da2"/>
                             <constraint firstItem="Ppk-V5-ppf" firstAttribute="leading" secondItem="JwQ-nP-Xve" secondAttribute="leading" constant="8" id="Kxb-Le-fZY"/>
+                            <constraint firstItem="JwQ-nP-Xve" firstAttribute="trailing" secondItem="EPd-Um-7DM" secondAttribute="trailing" constant="10" id="N4q-UP-x51"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JwQ-nP-Xve"/>
                     </view>
