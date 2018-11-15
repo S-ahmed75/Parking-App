@@ -10,6 +10,7 @@
 		0FA026C134EFF7D72E6F5B58 /* Pods_Parking_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB85117BBC302F73C08E415 /* Pods_Parking_AppTests.framework */; };
 		4DF0D80F7870A4E3399CEEAC /* Pods_Parking_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD9316EBD4E1C5741B39CF6 /* Pods_Parking_AppUITests.framework */; };
 		50A8D49211520ED61D7A107E /* Pods_Parking_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2457E72844DDEA6F8F309A7 /* Pods_Parking_App.framework */; };
+		7858E411219DADF000BE7F1B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7858E410219DADF000BE7F1B /* HelpViewController.swift */; };
 		78D1570F219D71FB00F2FA00 /* RentSpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */; };
 		78D15710219D71FB00F2FA00 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */; };
 		78D15711219D71FB00F2FA00 /* RentSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */; };
@@ -73,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		213742BBDEC4361D76F1BADA /* Pods-Parking AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parking AppTests/Pods-Parking AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		7858E410219DADF000BE7F1B /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSpaceTableViewController.swift; sourceTree = "<group>"; };
 		78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentSpaceViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				A3D8C749218F4B1300E0CDCA /* MapViewController1.swift */,
 				A3D8C74A218F4B1300E0CDCA /* TypesTableViewController.swift */,
+				7858E410219DADF000BE7F1B /* HelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				A3D8C740218F4ABF00E0CDCA /* UIViewExtension.swift in Sources */,
 				9EFEDCF02158D23800C0E4A1 /* MyBookingsViewController.swift in Sources */,
 				9EB0AE63214D0667006F19DF /* EmailSignInViewController.swift in Sources */,
+				7858E411219DADF000BE7F1B /* HelpViewController.swift in Sources */,
 				9E9C0908214BB39800E2C319 /* SWRevealViewController.m in Sources */,
 				9E7753A22147E9CB00F01830 /* AppDelegate.swift in Sources */,
 				A3D8C745218F4B0100E0CDCA /* GoogleDataProvider.swift in Sources */,
