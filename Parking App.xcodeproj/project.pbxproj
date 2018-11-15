@@ -37,12 +37,12 @@
 		A332C7B52199AD5C002EA468 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A332C7B72199AD5C002EA468 /* Localizable.strings */; };
 		A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335E8A6218CB0F700A1B06F /* paymentViewController.swift */; };
 		A337EC622198AD1F00CAA696 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */; };
+		A34A3445219D2A4300B9A62C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34A3444219D2A4300B9A62C /* GoogleService-Info.plist */; };
 		A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353F3CA219AF1E600CB4E93 /* constant.swift */; };
 		A3A01956218B61E4006E3786 /* L102Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01954218B61E4006E3786 /* L102Language.swift */; };
 		A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01955218B61E4006E3786 /* L012Localizer.swift */; };
 		A3BC82C72187755F00A54B25 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC82C52187755E00A54B25 /* EditTableViewController.swift */; };
 		A3BC82C82187755F00A54B25 /* RentSpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC82C62187755E00A54B25 /* RentSpaceTableViewController.swift */; };
-		A3BC82CC2187A36000A54B25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3BC82CB2187A36000A54B25 /* GoogleService-Info.plist */; };
 		A3D8C73E218F4ABF00E0CDCA /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */; };
 		A3D8C73F218F4ABF00E0CDCA /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D8C73C218F4ABF00E0CDCA /* MarkerInfoView.xib */; };
 		A3D8C740218F4ABF00E0CDCA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8C73D218F4ABF00E0CDCA /* UIViewExtension.swift */; };
@@ -114,12 +114,12 @@
 		A332C7BA2199BAB8002EA468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A335E8A6218CB0F700A1B06F /* paymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		A34A3444219D2A4300B9A62C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A353F3CA219AF1E600CB4E93 /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		A3A01954218B61E4006E3786 /* L102Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L102Language.swift; sourceTree = "<group>"; };
 		A3A01955218B61E4006E3786 /* L012Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L012Localizer.swift; sourceTree = "<group>"; };
 		A3BC82C52187755E00A54B25 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTableViewController.swift; path = ../../../Desktop/EditTableViewController.swift; sourceTree = "<group>"; };
 		A3BC82C62187755E00A54B25 /* RentSpaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentSpaceTableViewController.swift; path = ../../../Desktop/RentSpaceTableViewController.swift; sourceTree = "<group>"; };
-		A3BC82CB2187A36000A54B25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
 		A3D8C73C218F4ABF00E0CDCA /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerInfoView.xib; sourceTree = "<group>"; };
 		A3D8C73D218F4ABF00E0CDCA /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				9E7753A82147E9D200F01830 /* Assets.xcassets */,
 				A332C7812199A939002EA468 /* LaunchScreen.storyboard */,
 				9E7753AD2147E9D200F01830 /* Info.plist */,
-				A3BC82CB2187A36000A54B25 /* GoogleService-Info.plist */,
+				A34A3444219D2A4300B9A62C /* GoogleService-Info.plist */,
 				9EB2BF92216614AF005AC33C /* GoogleService-Info111.plist */,
 				9E9C0907214BB39800E2C319 /* SWRevealViewController.h */,
 				9E9C0906214BB39700E2C319 /* SWRevealViewController.m */,
@@ -420,8 +420,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E7753A92147E9D200F01830 /* Assets.xcassets in Resources */,
+				A34A3445219D2A4300B9A62C /* GoogleService-Info.plist in Resources */,
 				A332C7A82199AC2F002EA468 /* Main.storyboard in Resources */,
-				A3BC82CC2187A36000A54B25 /* GoogleService-Info.plist in Resources */,
 				A332C7B52199AD5C002EA468 /* Localizable.strings in Resources */,
 				A332C77F2199A939002EA468 /* LaunchScreen.storyboard in Resources */,
 				A3D8C73F218F4ABF00E0CDCA /* MarkerInfoView.xib in Resources */,

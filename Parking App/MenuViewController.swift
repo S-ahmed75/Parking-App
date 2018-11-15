@@ -226,7 +226,6 @@ class MenuViewController: UIViewController,userSignInDelegate {
 
         }
         loadView()
-        self.navigationController?.navigationBar.reloadInputViews()
         
        
     }
