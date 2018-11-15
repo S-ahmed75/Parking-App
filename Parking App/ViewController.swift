@@ -128,6 +128,9 @@ class ViewController: UIViewController {
 
         }
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        SVProgressHUD.dismiss()
+    }
     
     func sideMenus(){
         if revealViewController() != nil {
