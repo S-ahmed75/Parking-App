@@ -105,7 +105,7 @@ class ViewController: UIViewController {
             
         } else {
             signInButton.isHidden = false
-            let user2 = ["userFirstName": "Fname", "userSecondName": "lname", "space": false] as [String : Any]
+            let user2 = ["userFirstName": "Sign", "userSecondName": "In", "space": false] as [String : Any]
             KuserDef.set(user2, forKey: "user")
          //    self.delegate?.userSignIn(userFirstName: "123", userSecondName: "123", space: false)
             SVProgressHUD.dismiss()

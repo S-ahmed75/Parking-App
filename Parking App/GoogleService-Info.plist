@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>767034164325-ma75aauboe6hn3e11u1pir2o90jtgvbb.apps.googleusercontent.com</string>
+	<string>602404240917-59k6cpo3f5rv58eo5bvm5el1kj18mb74.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.767034164325-ma75aauboe6hn3e11u1pir2o90jtgvbb</string>
+	<string>com.googleusercontent.apps.602404240917-59k6cpo3f5rv58eo5bvm5el1kj18mb74</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDSOp0Dwm0TZTHkSWKXOP2sp28UUmH71Gw</string>
+	<string>AIzaSyB0W1u5na4BYgB1S5RBXKHoja_16LWHgh4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>767034164325</string>
+	<string>602404240917</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>sarfaraz.driverEmergApp</string>
+	<string>Alsofttech.Parking-App10</string>
 	<key>PROJECT_ID</key>
-	<string>emergencycallingapp</string>
+	<string>parking-624f8</string>
 	<key>STORAGE_BUCKET</key>
-	<string>emergencycallingapp.appspot.com</string>
+	<string>parking-624f8.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:767034164325:ios:6ac206e107b6da0a</string>
+	<string>1:602404240917:ios:60c9af5c5ce0d131</string>
 	<key>DATABASE_URL</key>
-	<string>https://emergencycallingapp.firebaseio.com</string>
+	<string>https://parking-624f8.firebaseio.com</string>
 </dict>
 </plist>

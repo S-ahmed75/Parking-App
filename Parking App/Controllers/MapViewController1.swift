@@ -88,6 +88,10 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
         
         SVProgressHUD.show()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        SVProgressHUD.dismiss()
+    }
     func sideMenus(){
         if revealViewController() != nil {
             menu.target = revealViewController()
@@ -259,7 +263,7 @@ extension MapViewController1: CLLocationManagerDelegate {
     
     locationManager.stopUpdatingLocation()
     fetchNearbyPlaces(coordinate: location.coordinate)
-   
+   print("loca2")
     let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
     let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
     let geo = geoFirestore.query(withCenter: location, radius: 1000)
@@ -268,7 +272,7 @@ extension MapViewController1: CLLocationManagerDelegate {
         Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
         Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
         Marker.map = self.mapView
-        
+        print("loca1")
         
     })
   }

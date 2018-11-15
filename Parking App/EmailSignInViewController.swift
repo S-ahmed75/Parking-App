@@ -34,10 +34,11 @@ class EmailSignInViewController: UIViewController {
                 
                 
                 self.present(alertVC, animated: true, completion: nil)
-            }
+            }else{
             
             self.dismiss(animated: true, completion: nil)
-        }
+            }
+            }
     }
     
 }

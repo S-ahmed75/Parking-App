@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Localize.update(fileName: "es-ES")
 //        Localize.update(defaultLanguage: "en")
 //        Localize.update(language: "es-ES")
-        let user2 = ["userFirstName": "Fname", "userSecondName": "lname", "space": false] as [String : Any]
+        let user2 = ["userFirstName": "Sign", "userSecondName": "In", "space": false] as [String : Any]
         kuserDef.set(user2, forKey: "user")
         kuserDef.synchronize()
         ReachabilityManager.shared.startMonitoring()
