@@ -481,3 +481,22 @@
 
 /* Class = "UILabel"; text = "Arriving"; ObjectID = "zxL-Cs-UqB"; */
 "zxL-Cs-UqB.text" = "Llegando";
+
+/* Class = "UILabel"; text = "First name"; ObjectID = "Nd8-lf-mzF"; */
+"Nd8-lf-mzF.text" = "Nombre de pila";
+
+/* Class = "UILabel"; text = "Second name"; ObjectID = "OLJ-My-bNe"; */
+"OLJ-My-bNe.text" = "Segundo nombre";
+
+/* Class = "UILabel"; text = "Personal Detail"; ObjectID = "Opy-kM-6ch"; */
+"Opy-kM-6ch.text" = "Detalle personal";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "INu-KF-5We"; */
+"INu-KF-5We.text" = "Contraseña";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Xom-h0-cBB"; */
+"Xom-h0-cBB.text" = "correo electrónico";
+
+
+
+
