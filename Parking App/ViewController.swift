@@ -102,7 +102,7 @@ class ViewController: UIViewController {
 
                 }
             }
-            
+            SVProgressHUD.dismiss(withDelay: 3.0)
         } else {
             signInButton.isHidden = false
             let user2 = ["userFirstName": "Sign", "userSecondName": "In", "space": false] as [String : Any]

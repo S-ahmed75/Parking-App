@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModalViewController: UIViewController {
+class detailViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var address: UILabel!

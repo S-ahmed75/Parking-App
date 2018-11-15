@@ -280,7 +280,7 @@
 "Y2m-WL-TLb.normalTitle" = "Manage my space";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Y5n-re-nnP"; */
-"Y5n-re-nnP.text" = "Label";
+"Y5n-re-nnP.text" = "Searching";
 
 /* Class = "UIButton"; normalTitle = "My bookings"; ObjectID = "YSs-ne-zrl"; */
 "YSs-ne-zrl.normalTitle" = "My bookings";

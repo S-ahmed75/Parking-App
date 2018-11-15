@@ -62,7 +62,7 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
   private let locationManager = CLLocationManager()
   private let dataProvider = GoogleDataProvider()
   private let searchRadius: Double = 1000
- 
+    var detailAddress = ""
     var selected1 = false
     var adres:String! {
         didSet{
@@ -104,8 +104,8 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booking" {
-            let dest = segue.destination as! paymentViewController
-//            dest.Fname = self.address
+            let dest = segue.destination as! detailViewController
+           // dest.address.text = self.detailAddress
 //            dest.Selected = self.selected
 //            dest.selected1 = true
 //            dest.initLat = self.initLatitude
@@ -311,10 +311,14 @@ extension MapViewController1: GMSMapViewDelegate {
             
             alertVC.addAction(PMAlertAction(title: "Dismiss", style: .cancel, action: { () -> Void in
                 print("Capture action Cancel")
+                
             }))
+             self.present(alertVC, animated: true, completion: nil)
         } else {
+            detailAddress = addressLabel.text!
+            self.performSegue(withIdentifier: "booking", sender: self)
             SVProgressHUD.dismiss()
-            performSegue(withIdentifier: "booking", sender: self)
+           
         }
         print("nothing inrrrr2")
       return nil
@@ -323,6 +327,7 @@ extension MapViewController1: GMSMapViewDelegate {
       print("nothing inrrrr")
         return nil
     }
+    
     
     infoView.nameLabel.text = placeMarker.place.name
     if let photo = placeMarker.place.photo {

@@ -497,6 +497,8 @@
 /* Class = "UILabel"; text = "Email"; ObjectID = "Xom-h0-cBB"; */
 "Xom-h0-cBB.text" = "correo electrónico";
 
+/* Class = "UILabel"; text = "Label"; ObjectID = "Y5n-re-nnP"; */
+"Y5n-re-nnP.text" = "buscando";
 
 
 

@@ -35,7 +35,7 @@
 		9EB2BF93216614AF005AC33C /* GoogleService-Info111.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EB2BF92216614AF005AC33C /* GoogleService-Info111.plist */; };
 		9EE0F0B2215F83A200989BB8 /* ManagespaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE0F0B1215F83A200989BB8 /* ManagespaceTableViewCell.swift */; };
 		9EFEDCF02158D23800C0E4A1 /* MyBookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFEDCEF2158D23800C0E4A1 /* MyBookingsViewController.swift */; };
-		A32A3CFA219338C30058C5AC /* bookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A3CEA219338C30058C5AC /* bookViewController.swift */; };
+		A32A3CFA219338C30058C5AC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A3CEA219338C30058C5AC /* detailViewController.swift */; };
 		A332C77F2199A939002EA468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A332C7812199A939002EA468 /* LaunchScreen.storyboard */; };
 		A332C7A82199AC2F002EA468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A332C7AA2199AC2F002EA468 /* Main.storyboard */; };
 		A332C7B52199AD5C002EA468 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A332C7B72199AD5C002EA468 /* Localizable.strings */; };
@@ -109,7 +109,7 @@
 		9EC77CBB71A2CD964B9C0E9C /* Pods-Parking AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parking AppUITests/Pods-Parking AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9EE0F0B1215F83A200989BB8 /* ManagespaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagespaceTableViewCell.swift; sourceTree = "<group>"; };
 		9EFEDCEF2158D23800C0E4A1 /* MyBookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingsViewController.swift; sourceTree = "<group>"; };
-		A32A3CEA219338C30058C5AC /* bookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookViewController.swift; sourceTree = "<group>"; };
+		A32A3CEA219338C30058C5AC /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		A332C7802199A939002EA468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A332C7A92199AC2F002EA468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A332C7AE2199AC3D002EA468 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				9EAB236D215E52700096B69F /* ParkingTermsViewController.swift */,
 				A332C7B72199AD5C002EA468 /* Localizable.strings */,
 				9EAB236B215E48360096B69F /* RecievedBookingsViewController.swift */,
-				A32A3CEA219338C30058C5AC /* bookViewController.swift */,
+				A32A3CEA219338C30058C5AC /* detailViewController.swift */,
 				A332C7AA2199AC2F002EA468 /* Main.storyboard */,
 				A335E8A6218CB0F700A1B06F /* paymentViewController.swift */,
 				9EAB2369215E45D50096B69F /* ManageSpaceViewController.swift */,
@@ -632,7 +632,7 @@
 				A3D8C73E218F4ABF00E0CDCA /* MarkerInfoView.swift in Sources */,
 				A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */,
 				9EB0AE59214CEE22006F19DF /* roundView.swift in Sources */,
-				A32A3CFA219338C30058C5AC /* bookViewController.swift in Sources */,
+				A32A3CFA219338C30058C5AC /* detailViewController.swift in Sources */,
 				A3D8C746218F4B0100E0CDCA /* GooglePlace.swift in Sources */,
 				A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */,
 				A3A01956218B61E4006E3786 /* L102Language.swift in Sources */,
