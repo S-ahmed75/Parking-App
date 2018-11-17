@@ -182,6 +182,7 @@ extension CountryPickerViewController {
         
         let completion = {
             self.countryPickerView.didSelectCountry(country)
+            
         }
         // If this is root, dismiss, else pop
         if navigationController?.viewControllers.count == 1 {

@@ -49,7 +49,7 @@ public class CountryPickerView: NibView {
         didSet { setup() }
     }
     
-    public var showCountryName = false {
+    public var showCountryName = true {
         didSet { setup() }
     }
     
@@ -59,7 +59,7 @@ public class CountryPickerView: NibView {
     }
     
     /// Change the font of phone code
-    public var font = UIFont.systemFont(ofSize: 17.0) {
+    public var font = UIFont.systemFont(ofSize: 16.0) {
         didSet { setup() }
     }
     /// Change the text color of phone code
@@ -71,7 +71,7 @@ public class CountryPickerView: NibView {
     /// The spacing between the flag image and the text.
     public var flagSpacingInView: CGFloat {
         get {
-            return spacingConstraint.constant
+            return spacingConstraint.multiplier
         }
         set {
             spacingConstraint.constant = newValue
@@ -83,11 +83,12 @@ public class CountryPickerView: NibView {
     
     fileprivate var _selectedCountry: Country?
     internal(set) public var selectedCountry: Country {
-        get {print(Locale.current.regionCode,"sunnnn")
+        get {
             return _selectedCountry
                 ?? countries.first(where: { $0.code == Locale.current.regionCode })
                 
                 ?? countries.first(where: { $0.code == "NG" })!
+            
             
         }
         set {
@@ -115,21 +116,26 @@ public class CountryPickerView: NibView {
         countryName.font = font
         countryName.textColor = textColor
         
+//        if showCountryName {
+//
+//
+//
+//        }
+        
         if showPhoneCodeInView && showCountryCodeInView {
             countryDetailsLabel.text = "(\(selectedCountry.code)) \(selectedCountry.phoneCode)"
             return
         }
-        if showCountryName {
-            countryName.text = "(\(selectedCountry.name))"
-            return
-            
-        }
+        
         
         
         if showCountryCodeInView || showPhoneCodeInView {
             countryDetailsLabel.text = showCountryCodeInView ? selectedCountry.code : selectedCountry.phoneCode
         } else {
-            countryDetailsLabel.text = nil
+            countryName.text = selectedCountry.name
+            
+            countryDetailsLabel.text = "\(selectedCountry.name)"
+            return
         }
         
     }
@@ -234,6 +240,7 @@ extension CountryPickerView {
 extension CountryPickerView {
     func didSelectCountry(_ country: Country) {
         selectedCountry = country
+    
         delegate?.countryPickerView(self, didSelectCountry: country)
     }
 }

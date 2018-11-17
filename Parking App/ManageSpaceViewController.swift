@@ -38,6 +38,17 @@ class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableVie
         self.tableView.allowsSelection = false
         
         SVProgressHUD.show()
+
+        
+
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        sideMenus()
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.global(qos: .background).async {
             self.db.collection("Users").document(self.uid!).getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -63,19 +74,11 @@ class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableVie
                 }
             }
             DispatchQueue.main.async {
-
+                
                 SVProgressHUD.dismiss()
             }
         }
-        
-
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        sideMenus()
-        
     }
-
 
     
     
@@ -108,6 +111,7 @@ class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableVie
         }
     }
     @IBAction func AddanotherSpace(_ sender: Any) {
+     
         
     }
     

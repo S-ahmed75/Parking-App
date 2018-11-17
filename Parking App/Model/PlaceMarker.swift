@@ -41,8 +41,15 @@ class PlaceMarker: GMSMarker {
     super.init()
     
     position = place.coordinate
-    icon = UIImage(named: place.placeType+"_pin")
+    icon = imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
     groundAnchor = CGPoint(x: 0.5, y: 1)
     appearAnimation = .pop
   }
+}
+func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+    image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+    let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return newImage
 }

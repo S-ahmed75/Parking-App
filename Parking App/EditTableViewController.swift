@@ -18,7 +18,7 @@ class EditTableViewController: UITableViewController {
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
     
-    @IBOutlet weak var Country: UILabel!
+    @IBOutlet weak var country: UILabel!
     @IBOutlet weak var City: UILabel!
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var MapView: GMSMapView!
@@ -74,7 +74,7 @@ class EditTableViewController: UITableViewController {
                 let ownerType = document.data()!["OwnerType"] as! String
                 let spacewidth = document.data()!["SpaceWidth"] as! String
                 let numberofSpaces = document.data()!["numberofSpaces"] as! String
-                let address = document.data()!["Adrress"] as! String
+                let address = document.data()!["address"] as! String
                 if let pricePerhour = document.data()!["pricePerHour"] as? String{
                     if let pricePerday = document.data()!["pricePerDay"] as? String{
                         if let pricePerweek = document.data()!["pricePerWeek"] as? String{
@@ -105,7 +105,7 @@ class EditTableViewController: UITableViewController {
                     self.OwnerType.selectedSegmentIndex = 1
                 }
                 self.numberOfSpaces.text = numberofSpaces
-                self.Country.text = address
+                self.country.text = address
             } else {
                 print("Document does not exist")
             }

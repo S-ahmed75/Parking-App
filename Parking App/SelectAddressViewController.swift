@@ -88,7 +88,7 @@ class SelectAddressViewController: UIViewController,GMSMapViewDelegate,CLLocatio
     @IBAction func DoneButton(_ sender: Any) {
         let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
         let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
-        geoFirestore.setLocation(location: CLLocation(latitude: lat!, longitude: long!), forDocumentWithID: uid!) { (error) in
+        geoFirestore.setLocation(location: CLLocation(latitude: initLat!, longitude: initLong!), forDocumentWithID: uid!) { (error) in
             if (error != nil) {
                 print("An error occured: \(error)")
             } else {
@@ -222,12 +222,44 @@ extension SelectAddressViewController {
             return
         }
         
-        mapView.camera = GMSCameraPosition.camera(withLatitude: initLat!, longitude: initLong!, zoom: 15.0)
+        if initLat == 0.0 {
+            
+            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
+        }
+            
+        else{
+            mapView.camera = GMSCameraPosition.camera(withLatitude: initLat!, longitude: initLong!, zoom: 15.0)
+            
+        }
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         
         locationManager.stopUpdatingLocation()
-        fetchNearbyPlaces(coordinate: location.coordinate)
+        // fetchNearbyPlaces(coordinate: location.coordinate)
+        print("loca2")
+        
+        let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
+        let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
+        let geo = geoFirestore.query(withCenter: location, radius: 1000)
+        geo.observe(.documentEntered, with: { (key, location) in
+            let Marker = GMSMarker()
+            Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
+            Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+            Marker.map = self.mapView
+            print("loca1")
+            
+            print(Marker.userData,"karachi")
+            
+            
+            
+        })    }
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
 

@@ -12,7 +12,7 @@ import FirebaseAuth
 import PMAlertController
 import  SVProgressHUD
 
-class EmailSignUpViewController: UIViewController {
+class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var firstName: UITextField!
@@ -28,7 +28,7 @@ class EmailSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        password.delegate = self
     }
     let uid = Auth.auth().currentUser?.uid
 

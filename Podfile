@@ -26,7 +26,8 @@ target 'Parking App' do
   pod 'ReachabilitySwift'
    pod 'APESuperHUD', :git => 'https://github.com/apegroup/APESuperHUD.git'
    pod 'Localize'
-  
+ # use this line to install any pod = pod install --no-repo-update
+ 
   target 'Parking AppTests' do
     inherit! :search_paths
     # Pods for testing

@@ -56,12 +56,13 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
    @IBOutlet weak var SearchBarLabel: UILabel!
     @IBOutlet weak var searchBarView: UIView!
     
-    private var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
+    private var searchedTypes = [String]()
     var initLat:CLLocationDegrees? = 0.0
     var initLong:CLLocationDegrees?
   private let locationManager = CLLocationManager()
   private let dataProvider = GoogleDataProvider()
   private let searchRadius: Double = 1000
+    var tappedMarker = GMSMarker()
     var detailAddress = ""
     var selected1 = false
     var adres:String! {
@@ -105,7 +106,8 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booking" {
             let dest = segue.destination as! detailViewController
-           // dest.address.text = self.detailAddress
+          
+            // dest.address.text = self.detailAddress
 //            dest.Selected = self.selected
 //            dest.selected1 = true
 //            dest.initLat = self.initLatitude
@@ -150,9 +152,7 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     }
   }
   
-  @IBAction func refreshPlaces(_ sender: Any) {
-    fetchNearbyPlaces(coordinate: mapView.camera.target)
-  }
+ 
     
     @IBAction func searchBar(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -224,7 +224,7 @@ extension MapViewController1: TypesTableViewControllerDelegate {
   func typesController(_ controller: TypesTableViewController, didSelectTypes types: [String]) {
     searchedTypes = controller.selectedTypes.sorted()
     dismiss(animated: true)
-    fetchNearbyPlaces(coordinate: mapView.camera.target)
+  //  fetchNearbyPlaces(coordinate: mapView.camera.target)
   }
 }
 
@@ -262,8 +262,9 @@ extension MapViewController1: CLLocationManagerDelegate {
     mapView.settings.myLocationButton = true
     
     locationManager.stopUpdatingLocation()
-    fetchNearbyPlaces(coordinate: location.coordinate)
+   // fetchNearbyPlaces(coordinate: location.coordinate)
    print("loca2")
+   
     let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
     let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
     let geo = geoFirestore.query(withCenter: location, radius: 1000)
@@ -273,6 +274,10 @@ extension MapViewController1: CLLocationManagerDelegate {
         Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
         Marker.map = self.mapView
         print("loca1")
+        
+        print(Marker.userData,"karachi")
+        
+        
         
     })
   }
@@ -303,8 +308,9 @@ extension MapViewController1: GMSMapViewDelegate {
   }
   
   func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
-    guard let placeMarker = marker as? PlaceMarker else {
-        
+    
+    
+    if marker == tappedMarker{
         if Auth.auth().currentUser == nil {
             
             let alertVC = PMAlertController(title: "Sign In", description: "You need to SignIn for booking", image: #imageLiteral(resourceName: "your-logo-here"), style: .alert)
@@ -313,13 +319,33 @@ extension MapViewController1: GMSMapViewDelegate {
                 print("Capture action Cancel")
                 
             }))
-             self.present(alertVC, animated: true, completion: nil)
+            self.present(alertVC, animated: true, completion: nil)
         } else {
-            detailAddress = addressLabel.text!
-            self.performSegue(withIdentifier: "booking", sender: self)
-            SVProgressHUD.dismiss()
            
+           
+                let geocoder = GMSGeocoder()
+                
+                geocoder.reverseGeocodeCoordinate(tappedMarker.position) { response, error in
+                  
+                    
+                    guard let address = response?.firstResult(), let lines = address.lines else {
+                        return
+                    }
+                    print(address,"karachi")
+                  self.performSegue(withIdentifier: "booking", sender: self)
+                    
+                }
+            
+            
+         
         }
+
+    }
+    guard let placeMarker = marker as? PlaceMarker else {
+        
+        
+     
+        
         print("nothing inrrrr2")
       return nil
     }
@@ -340,6 +366,7 @@ extension MapViewController1: GMSMapViewDelegate {
   }
   
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    tappedMarker = marker
     mapCenterPinImage.fadeOut(0.25)
     return false
   }

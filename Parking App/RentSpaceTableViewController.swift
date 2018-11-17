@@ -1,6 +1,6 @@
 //
 //  RentSpaceTableViewController.swift
-//  
+//
 //
 //  Created by Mohammad Ali Panhwar on 9/25/18.
 //
@@ -13,14 +13,19 @@ import CountryPickerView
 import FirebaseFirestore
 import Firebase
 import PMAlertController
-class RentSpaceTableViewController: UITableViewController {
+class RentSpaceTableViewController: UITableViewController{
 
-    
+  
+
     
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
     var adress = ""
+    var initLongitude:CLLocationDegrees?
+    var initLatitude:CLLocationDegrees?
+    
     let cp = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
+     let cpv = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
     
     @IBOutlet weak var selectCountry: UITextField!
     @IBOutlet weak var menu: UIBarButtonItem!
@@ -33,21 +38,45 @@ class RentSpaceTableViewController: UITableViewController {
     @IBOutlet weak var Lname: UITextField!
     @IBOutlet weak var PhoneNumber: UITextField!
     
+    let count = CountryPickerView()
+    
+    @IBOutlet weak var countryPicke: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         self.SpaceType.selectedSegmentIndex = UISegmentedControlNoSegment
         self.OwnerType.selectedSegmentIndex = UISegmentedControlNoSegment
         self.SpaceWidth.selectedSegmentIndex = UISegmentedControlNoSegment
+       
         
+       // let cou = count.countries
+       
+       
+        cpv.showCountryCodeInView = false
+        cpv.showCountryName = true
+        
+        cpv.showPhoneCodeInView = false
+     
+
+     
+        selectCountry.leftView = cpv
+        selectCountry.leftViewMode = .always
+        
+        
+        
+        cp.showPhoneCodeInView = true
         PhoneNumber.leftView = cp
+        
         PhoneNumber.leftViewMode = .always
         sideMenus()
         self.tableView.allowsSelection = false
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    
     func sideMenus(){
         if revealViewController() != nil {
             menu.target = revealViewController()
@@ -58,14 +87,14 @@ class RentSpaceTableViewController: UITableViewController {
         }
     }
     
-
+    
     @IBAction func rentSpace(_ sender: Any) {
-        if self.PhoneNumber.text != "" && self.Fname.text != "" && self.Lname.text != "" && self.numberOfSpaces.text != "" && self.selectCountry.text != ""{
+        if self.PhoneNumber.text != "" && self.Fname.text != "" && self.Lname.text != "" && self.numberOfSpaces.text != "" && self.selectAddress.text != ""{
             db.collection("Users").document(uid!).updateData(["Phone":self.PhoneNumber.text!])
             db.collection("Users").document(uid!).updateData(["firstname":self.Fname.text!])
             db.collection("Users").document(uid!).updateData(["lastname":self.Lname.text!])
             db.collection("Users").document(uid!).updateData(["numberofSpaces":self.numberOfSpaces.text!])
-            db.collection("Users").document(uid!).updateData(["Adrress":self.selectCountry.text!])
+            db.collection("Users").document(uid!).updateData(["address":self.selectAddress.text!])
             db.collection("Users").document(uid!).updateData(["Space":true])
             self.performSegue(withIdentifier: "parking", sender: self)
         }else{
@@ -79,12 +108,12 @@ class RentSpaceTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 8
@@ -92,13 +121,14 @@ class RentSpaceTableViewController: UITableViewController {
     
     
     @IBAction func country(_ sender: Any) {
-        let autocompleteController = GMSAutocompleteViewController()
-        autocompleteController.delegate = self
-        present(autocompleteController, animated: true, completion: nil)
+        
     }
     
     @IBAction func findAddress(_ sender: Any) {
-        performSegue(withIdentifier: "Map2", sender: self)
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
+        
     }
     
     @IBAction func SpaceTypeButton(_ sender: UISegmentedControl) {
@@ -124,7 +154,7 @@ class RentSpaceTableViewController: UITableViewController {
         case 1:
             db.collection("Users").document(uid!).updateData(["OwnerType":"Business"])
             print("2")
-        
+            
         default:
             break
         }
@@ -144,25 +174,28 @@ class RentSpaceTableViewController: UITableViewController {
     }
     
     
-
-
-
+    
+    
+    
 }
 extension RentSpaceTableViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-            print("Place name: \(place.name)")
-            
-            print("Place address: \(String(describing: place.formattedAddress))")
-            self.selectCountry.text = place.formattedAddress!
-            self.adress = place.formattedAddress!
+        print("Place name: \(place.name)")
         
-            print("Place attributions: \(String(describing: place.attributions))")
-            
-                self.dismiss(animated: true, completion: nil)
-                
-            
+        print("Place address: \(String(describing: place.formattedAddress))")
+        self.selectAddress.text = place.formattedAddress!
+        
+        self.adress = place.formattedAddress!
+        self.initLatitude = place.coordinate.latitude
+        self.initLongitude = place.coordinate.longitude
+        
+        print("Place attributions: \(String(describing: place.attributions))")
+        
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "Map2", sender: self)
+        
         
         
         
@@ -192,9 +225,11 @@ extension RentSpaceTableViewController: GMSAutocompleteViewControllerDelegate {
         if segue.identifier == "Map2" {
             let dest = segue.destination as! SelectAddressViewController
             dest.address = self.adress
+                        dest.initLat = self.initLatitude
+                        dest.initLong = self.initLongitude
         }
     }
-
+    
     
 }
 
