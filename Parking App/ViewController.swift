@@ -73,6 +73,10 @@ class ViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            self.signInButton.isHidden = true
+        }
+        
         if L102Language.currentAppleLanguage() == "en" {
           autocompleteController.delegate = self
             GMSAutocompleteViewController().navigationItem.searchController?.searchBar.placeholder = "Search"
@@ -85,6 +89,7 @@ class ViewController: UIViewController {
             GMSAutocompleteViewController().navigationItem.searchController?.searchBar.placeholder = "Buscar"
 
         }
+        KuserDef.synchronize()
     }
     override func viewWillDisappear(_ animated: Bool) {
         SVProgressHUD.dismiss()
