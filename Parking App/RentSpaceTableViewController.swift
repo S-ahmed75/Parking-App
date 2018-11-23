@@ -13,7 +13,16 @@ import CountryPickerView
 import FirebaseFirestore
 import Firebase
 import PMAlertController
-class RentSpaceTableViewController: UITableViewController{
+import Geofirestore
+
+
+class RentSpaceTableViewController: UITableViewController,setLocat{
+    func setloc(location: CLLocation, forDocumentWithID: String,address:String) {
+        self.savLat = location.coordinate.latitude
+        self.savLon = location.coordinate.longitude
+        self.selectAddress.text = address
+    }
+    
 
   
 
@@ -23,6 +32,10 @@ class RentSpaceTableViewController: UITableViewController{
     var adress = ""
     var initLongitude:CLLocationDegrees?
     var initLatitude:CLLocationDegrees?
+    var numbe = 0;
+    var savLat:CLLocationDegrees?
+    var savLon:CLLocationDegrees?
+    
     
     let cp = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
      let cpv = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
@@ -39,17 +52,38 @@ class RentSpaceTableViewController: UITableViewController{
     @IBOutlet weak var PhoneNumber: UITextField!
     
     let count = CountryPickerView()
+    var spaceType = "Driveway"
+    var ownerType = "Individual"
+    var spaceWidth = "Normal"
+    var spaceId = ""
+    var ui:String = ""
+    var userId = ""
     
     @IBOutlet weak var countryPicke: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+    
+       
         self.SpaceType.selectedSegmentIndex = UISegmentedControlNoSegment
         self.OwnerType.selectedSegmentIndex = UISegmentedControlNoSegment
         self.SpaceWidth.selectedSegmentIndex = UISegmentedControlNoSegment
        
-        
+       self.db.collection("Users").document(self.uid!).getDocument(completion: { (snaps, errr) in
+        if let doc2 =  snaps, doc2.exists{
+            print(doc2.data(),"mieeee")
+            for d in doc2.data()!{
+                
+                var numberofSpa:Int = 0
+                var bookSpac:Int = 0
+                
+                if d.key == "userId"{
+                    let  u:String = d.value as! String
+                    self.userId = u
+                    
+                }
+            }}
+    })
        // let cou = count.countries
        
        
@@ -68,6 +102,7 @@ class RentSpaceTableViewController: UITableViewController{
         cp.showPhoneCodeInView = true
         PhoneNumber.leftView = cp
         
+          spaceId = "\(db.collection("ActiveParkings").document(uid!).collection("parkingSpace").document().documentID)"
         PhoneNumber.leftViewMode = .always
         sideMenus()
         self.tableView.allowsSelection = false
@@ -90,13 +125,38 @@ class RentSpaceTableViewController: UITableViewController{
     
     @IBAction func rentSpace(_ sender: Any) {
         if self.PhoneNumber.text != "" && self.Fname.text != "" && self.Lname.text != "" && self.numberOfSpaces.text != "" && self.selectAddress.text != ""{
-            db.collection("Users").document(uid!).updateData(["Phone":self.PhoneNumber.text!])
-            db.collection("Users").document(uid!).updateData(["firstname":self.Fname.text!])
-            db.collection("Users").document(uid!).updateData(["lastname":self.Lname.text!])
-            db.collection("Users").document(uid!).updateData(["numberofSpaces":self.numberOfSpaces.text!])
-            db.collection("Users").document(uid!).updateData(["address":self.selectAddress.text!])
-            db.collection("Users").document(uid!).updateData(["Space":true])
-            self.performSegue(withIdentifier: "parking", sender: self)
+            SVProgressHUD.show()
+            let geoFirestoreRef = Firestore.firestore().collection("marker")
+                    let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
+                    geoFirestore.setLocation(location: CLLocation(latitude: savLat!, longitude: savLon!), forDocumentWithID: spaceId) { (error) in
+                        if (error != nil) {
+                            print("An error occured: \(error)")
+                        } else {
+                            let formatter = DateFormatter()
+                            formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+                            let secondDate = formatter.date(from: "2010-11-22 07:43:19 +0000")
+                            let date = Date().addingTimeInterval(-3600*60*60*24)
+                            
+                            
+                            let user = ["Phone":self.PhoneNumber.text!,"firstname":self.Fname.text!,"lastname":self.Lname.text!,"numberofSpaces":self.numberOfSpaces.text!,"address":self.selectAddress.text!,"SpaceType":self.spaceType,"OwnerType":self.ownerType,"SpaceWidth":self.spaceWidth,"arriveData":date,"leaveData":date] as [String : Any]
+                            
+                            self.db.collection("ActiveParkings").document(self.userId).collection("parkingSpace").document(self.spaceId).setData(user) { err in
+                                if let err = err {
+                                    print("Error writing document: \(err)")
+                                } else {
+                                    self.db.collection("Users").document(self.uid!).updateData(["Space":true])
+                                    self.db.collection("Users").document(self.uid!).updateData(["SpaceId":self.spaceId])
+                                    print("Document successfully written!")
+                                    
+                                    self.performSegue(withIdentifier: "parking", sender: self)
+                                    SVProgressHUD.dismiss()
+                                }
+                            }
+
+                            print("Saved location successfully!")
+                        }
+            }  
+            
         }else{
             let alertVC = PMAlertController(title: "Fields are Empty", description: "Please check if any field is not empty ", image: #imageLiteral(resourceName: "your-logo-here"), style: .alert)
             
@@ -134,13 +194,16 @@ class RentSpaceTableViewController: UITableViewController{
     @IBAction func SpaceTypeButton(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"Driveway"])
+           self.spaceType = "Driveway"
+           
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"Garage"])
+           self.spaceType = "Garage"
+       
             print("2")
         case 2:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"CarPark"])
+           self.spaceType = "CarPark"
+           
             print("3")
         default:
             break
@@ -149,10 +212,12 @@ class RentSpaceTableViewController: UITableViewController{
     @IBAction func OwnerTypeButton(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["OwnerType":"Individual"])
+          self.ownerType = "Individual"
+          
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["OwnerType":"Business"])
+           self.ownerType = "Business"
+           
             print("2")
             
         default:
@@ -163,10 +228,12 @@ class RentSpaceTableViewController: UITableViewController{
     @IBAction func SpaceWidthButton(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["SpaceWidth":"Normal"])
+           self.spaceWidth = "Normal"
+          
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["SpaceWidth":"Narrow"])
+           self.spaceWidth = "Narrow"
+        
             print("2")
         default:
             break
@@ -227,6 +294,8 @@ extension RentSpaceTableViewController: GMSAutocompleteViewControllerDelegate {
             dest.address = self.adress
                         dest.initLat = self.initLatitude
                         dest.initLong = self.initLongitude
+                        dest.spaceId = self.spaceId
+            dest.delegate = self
         }
     }
     

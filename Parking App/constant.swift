@@ -6,7 +6,22 @@
 //  Copyright © 2018 Mohammad Ali Panhwar. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
+import GoogleMaps
+import SVProgressHUD
+import GooglePlaces
+import CountryPickerView
+import FirebaseFirestore
+import Firebase
+import PMAlertController
+import Geofirestore
+
+class constant{
+     let db = Firestore.firestore()
+    let uid = Auth.auth().currentUser?.uid
+    
+}
 
 struct TableDAta {
     

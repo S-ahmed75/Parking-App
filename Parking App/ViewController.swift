@@ -10,6 +10,9 @@ import UIKit
 import GooglePlacePicker
 import SVProgressHUD
 import Firebase
+import FirebaseFirestore
+
+
 
 protocol userSignInDelegate {
     func userSignIn(userFirstName:String,userSecondName:String,space:Bool)
@@ -29,7 +32,8 @@ class ViewController: UIViewController {
     var initLatitude:CLLocationDegrees?
     let uid = Auth.auth().currentUser?.uid
     let db = Firestore.firestore()
-  
+    let KuserDef = UserDefaults.standard
+    
     var delegate: userSignInDelegate?
      let autocompleteController = GMSAutocompleteViewController()
     
@@ -49,69 +53,23 @@ class ViewController: UIViewController {
         }
     override func viewDidLoad() {
         super.viewDidLoad()
-       let KuserDef = UserDefaults.standard
+      
+        
+    //    let geoFirestoreRef = Firestore.firestore().collection("marker")
+        
+        
+        
         KuserDef.synchronize()
         self.delegate = MenuViewController().self
         
        NotificationCenter.default.addObserver(self, selector: #selector(inputModeDidChange), name: .UITextInputCurrentInputModeDidChange, object: nil)
         SVProgressHUD.show()
-        
-        if Auth.auth().currentUser != nil {
-            signInButton.isHidden = true
-            var spac = false
-            db.collection("Users").document(uid!).getDocument { (snap, error) in
-                if error != nil {
-                    print(error?.localizedDescription)
-                }else{
-                    if let document = snap, document.exists {
-                        if let Fname = document.data()!["firstname"] as? String {
-                            if let lname = document.data()!["lastname"] as? String {
-                               
-                                let user2 = ["userFirstName": Fname, "userSecondName": lname, "space": spac] as [String : Any]
-                                KuserDef.set(user2, forKey: "user")
-                                
-                                if let space = document.data()!["Space"] as? Bool{
-                                  spac = space
-                                    
-                                    let email = document.data()!["Email"] as? String
-                                    let ownerType = document.data()!["OwnerType"] as? String
-                                    let Phone = document.data()!["Phone"] as? String
-                                    let spaceType = document.data()!["SpaceType"] as? String
-                                    let spaceWidth = document.data()!["SpaceWidth"] as? String
-                                    let address = document.data()!["address"] as? String
-                                   
-                                    let numberofSpaces = document.data()!["numberofSpaces"] as? String
-                                    let password = document.data()!["password"] as? String
-                                    
-                                    let user = ["userFirstName": Fname, "userSecondName": lname, "space": spac, "Email": email!, "OwnerType": ownerType!, "Phone": Phone!, "SpaceType": spaceType!, "SpaceWidth": spaceWidth!, "address": address!, "numberofSpaces": numberofSpaces!, "password": password!] as [String : Any]
-                                    print("uwwww")
-                                    //let user2 = ["userFirstName": Fname, "userSecondName": lname, "space": spac] as [String : Any]
-                                    KuserDef.set(user, forKey: "user")
-                                  //  self.delegate?.userSignIn(userFirstName: Fname, userSecondName: lname, space: space)
-                                    SVProgressHUD.dismiss()
-                                    KuserDef.synchronize()
-                                }else{
-                                    SVProgressHUD.dismiss()
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-            }
-            SVProgressHUD.dismiss(withDelay: 3.0)
-        } else {
-            signInButton.isHidden = false
-            let user2 = ["userFirstName": "Sign", "userSecondName": "In", "space": false] as [String : Any]
-            KuserDef.set(user2, forKey: "user")
-         //    self.delegate?.userSignIn(userFirstName: "123", userSecondName: "123", space: false)
-            SVProgressHUD.dismiss()
-        }
+        userid()
         KuserDef.synchronize()
+        
+        
         sideMenus()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +88,98 @@ class ViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         SVProgressHUD.dismiss()
+    }
+    var userID = ""
+    func userid (){
+        
+        if Auth.auth().currentUser != nil {
+            
+            
+        self.db.collection("Users").document(self.uid!).getDocument(completion: { (snaps, errr) in
+            if let doc2 =  snaps, doc2.exists{
+                print(doc2.data(),"mieeee")
+                for d in doc2.data()!{
+                    
+                    var numberofSpa:Int = 0
+                    var bookSpac:Int = 0
+                    
+                    if d.key == "userId"{
+                        let  u:String = d.value as! String
+                        self.userID = u
+                        
+                    }
+                }
+                
+                
+                
+                            self.signInButton.isHidden = true
+                            var spac = false
+                            self.db.collection("Users").document(self.uid!).getDocument { (snap, error) in
+                                if error != nil {
+                                    print(error?.localizedDescription)
+                                }else{
+                                    if let document = snap, document.exists {
+                                        if let Fname = document.data()!["firstname"] as? String {
+                                            if let lname = document.data()!["lastname"] as? String {
+                                                let password = document.data()!["password"] as? String
+                                                let email = document.data()!["Email"] as? String
+                                                let user2 = ["userFirstName": Fname, "userSecondName": lname, "space": spac] as [String : Any]
+                                                self.KuserDef.set(user2, forKey: "user")
+                
+                                                if let space = document.data()!["Space"] as? Bool{
+                                                  spac = space
+                
+                                                    if let doc = document.data()!["SpaceId"] as? String{
+                
+                                                    self.db.collection("ActiveParkings").document(self.userID).collection("parkingSpace").document(doc).getDocument { (snapp,docume) in
+                
+                                                        if let doc1 = snapp , doc1.exists {
+                
+                                                        let ownerType = doc1.data()!["OwnerType"] as? String
+                                                        let Phone = doc1.data()!["Phone"] as? String
+                                                        let spaceType = doc1.data()!["SpaceType"] as? String
+                                                        let spaceWidth = doc1.data()!["SpaceWidth"] as? String
+                                                        let address = doc1.data()!["address"] as? String
+                
+                                                        let numberofSpaces = doc1.data()!["numberofSpaces"] as? String
+                
+                
+                                                        let user = ["userFirstName": Fname, "userSecondName": lname, "space": spac, "Email": email!, "OwnerType": ownerType!, "Phone": Phone!, "SpaceType": spaceType!, "SpaceWidth": spaceWidth!, "address": address!, "numberofSpaces": numberofSpaces!, "password": password!] as [String : Any]
+                                                        print("uwwww")
+                
+                                                        self.KuserDef.set(user, forKey: "user")
+                
+                                                        SVProgressHUD.dismiss()
+                                                        self.KuserDef.synchronize()
+                                                    }
+                                                        }
+                
+                                                }else{
+                                                    SVProgressHUD.dismiss()
+                                                }
+                                                }
+                                            }
+                
+                                        }
+                
+                                    }
+                
+                                }
+                            }
+                          
+
+            }
+        }
+            
+        )
+            SVProgressHUD.dismiss(withDelay: 3.0)
+        } else {
+            self.signInButton.isHidden = false
+            let user2 = ["userFirstName": "Sign", "userSecondName": "In", "space": false] as [String : Any]
+            self.KuserDef.set(user2, forKey: "user")
+            //    self.delegate?.userSignIn(userFirstName: "123", userSecondName: "123", space: false)
+            SVProgressHUD.dismiss()
+        }
     }
     
     func sideMenus(){

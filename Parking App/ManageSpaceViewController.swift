@@ -19,12 +19,14 @@ struct Parkings {
     var price:String
 }
 
-var arr:[Parkings] = []
+
 class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
+    var userId = ""
     
+    var arr:[Parkings] = []
     var price1 = "18"
     
     @IBOutlet weak var tableView: UITableView!
@@ -45,39 +47,79 @@ class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         sideMenus()
-        
+       
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    func loaddata(){
+        self.db.collection("Users").document(self.uid!).getDocument(completion: { (snaps, errr) in
+            if let doc2 =  snaps, doc2.exists{
+                print(doc2.data(),"mieeee")
+                for d in doc2.data()!{
+                    
+                    var numberofSpa:Int = 0
+                    var bookSpac:Int = 0
+                    
+                    if d.key == "userId"{
+                        let  u:String = d.value as! String
+                        self.userId = u
+                        
+                    }
+                }}
+        })
+        
+        
         DispatchQueue.global(qos: .background).async {
+            var spaceID = ""
+            
             self.db.collection("Users").document(self.uid!).getDocument { (document, error) in
+                self.arr.removeAll()
+                self.tableView.reloadData()
+                
                 if let document = document, document.exists {
                     let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                     print("Document data: \(dataDescription)")
-                    let spaceType = document.data()!["SpaceType"] as! String
-                    let ownerType = document.data()!["OwnerType"] as! String
-                    let spacewidth = document.data()!["SpaceWidth"] as! String
-                    let phone = document.data()!["Phone"] as! String
-                    let numberofSpaces = document.data()!["numberofSpaces"] as! String
+                    spaceID = document.data()!["SpaceId"] as! String
                     
-                    if let price = document.data()!["pricePerHour"] as? String {
-                        self.price1 = price
-                    }
-                    let ar = Parkings(ownerType: ownerType, Phone: phone, spaceType: spaceType, SpaceWidth: spacewidth, numberOfspaces: numberofSpaces, price: self.price1)
-                    arr.append(ar)
                     
-                    self.tableView.reloadData()
-                    
-                    print(spaceType)
-                } else {
-                    print("Document does not exist")
-                }
+                    self.db.collection("ActiveParkings").document(self.userId).collection("parkingSpace").getDocuments() { (document, error) in
+                        print("tiiii")
+                       
+                        if let errr = error {
+                            print("Document Does not Exits")
+                            
+                        } else {
+                            for document in document!.documents{
+                                
+                                
+                                let spaceType = document.data()["SpaceType"] as! String
+                                let ownerType = document.data()["OwnerType"] as! String
+                                let spacewidth = document.data()["SpaceWidth"] as! String
+                                let phone = document.data()["Phone"] as! String
+                                let numberofSpaces = document.data()["numberofSpaces"] as! String
+                                
+                                if let price = document.data()["pricePerHour"] as? String {
+                                    self.price1 = price
+                                }
+                                let ar = Parkings(ownerType: ownerType, Phone: phone, spaceType: spaceType, SpaceWidth: spacewidth, numberOfspaces: numberofSpaces, price: self.price1)
+                                self.arr.append(ar)
+                                
+                                self.tableView.reloadData()
+                                
+                                print(spaceType)
+                            }
+                        }
+                    }}
+                
             }
             DispatchQueue.main.async {
                 
                 SVProgressHUD.dismiss()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       loaddata()
     }
 
     
@@ -90,7 +132,7 @@ class ManageSpaceViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.Edit.tag = indexPath.row
         cell.Edit.addTarget(self, action: #selector(ManageSpaceViewController.segue(_sender:)), for: UIControlEvents.touchUpInside)
         cell.prices.text = arr[indexPath.row].price
-        arr.removeAll()
+    //    arr.removeAll()
         return cell
     }
 

@@ -12,11 +12,16 @@ import GoogleMaps
 import FirebaseFirestore
 import Firebase
 import Geofirestore
+
+protocol setLocat {
+    func setloc(location: CLLocation, forDocumentWithID: String, address:String)
+}
+
 class SelectAddressViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
 
 
    
-    
+    var delegate: setLocat?
     let uid = Auth.auth().currentUser?.uid
     
     var initLat:CLLocationDegrees?
@@ -26,6 +31,8 @@ class SelectAddressViewController: UIViewController,GMSMapViewDelegate,CLLocatio
     var long:CLLocationDegrees?
     let db = Firestore.firestore()
     let marker = GMSMarker()
+    var spaceId = ""
+    
     var address:String! {
         didSet{
             print(self.address)
@@ -86,15 +93,9 @@ class SelectAddressViewController: UIViewController,GMSMapViewDelegate,CLLocatio
 //    }
     
     @IBAction func DoneButton(_ sender: Any) {
-        let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
-        let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
-        geoFirestore.setLocation(location: CLLocation(latitude: initLat!, longitude: initLong!), forDocumentWithID: uid!) { (error) in
-            if (error != nil) {
-                print("An error occured: \(error)")
-            } else {
-                print("Saved location successfully!")
-            }
-        }
+       
+
+        delegate?.setloc(location: CLLocation(latitude: initLat!, longitude: initLong!), forDocumentWithID: spaceId, address:self.address)
          _ = self.navigationController?.popViewController(animated: true)
         
     }

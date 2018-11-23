@@ -36,7 +36,9 @@ class TermsViewController: UIViewController {
         self.dismiss(animated: true, completion: {})
         self.navigationController?.popViewController(animated: true)
        SVProgressHUD.show()
-        db.collection("Users").document(uid!).setData(["firstname":self.Fname,"lastname":self.Lname,"Email":self.email,"password":self.pass]){ err in
+        let userid = db.collection("ActiveParkings").document().documentID;
+        db.collection("ActiveParkings").document(userid).setData(["karachi":userid])
+        db.collection("Users").document(uid!).setData(["firstname":self.Fname,"lastname":self.Lname,"Email":self.email,"password":self.pass,"userId":userid]){ err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {

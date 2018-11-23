@@ -71,6 +71,10 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
         }
     }
     var Selected:Bool? = nil
+    let uid = Auth.auth().currentUser?.uid
+    let db = Firestore.firestore()
+    var ariveDAt:Date?
+    var leavDat:Date?
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -86,8 +90,8 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     
     }
     override func viewWillAppear(_ animated: Bool) {
-        
-        SVProgressHUD.show()
+       SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 3.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -177,8 +181,8 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     
     @IBAction func ArrivingButton(_ sender: Any) {
         
-        let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
-        let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+        let min = Date().addingTimeInterval(-60 * 60 * 24 * 0)
+        let max = Date().addingTimeInterval(60 * 60 * 24 * 7)
         let picker = DateTimePicker.create(minimumDate: min, maximumDate: max)
         picker.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
         picker.darkColor = UIColor.darkGray
@@ -188,6 +192,7 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
             self.ArrivingLabel.text = formatter.string(from: date)
+        self.ariveDAt = date
         }
         picker.delegate = self
         picker.show()
@@ -199,8 +204,8 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     
     @IBAction func leaving(_ sender: Any) {
         
-        let min = Date().addingTimeInterval(-60 * 60 * 24 * 4)
-        let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+        let min = Date().addingTimeInterval(-60 * 60 * 24 * 0)
+        let max = Date().addingTimeInterval(60 * 60 * 24 * 7)
         let picker1 = DateTimePicker.create(minimumDate: min, maximumDate: max)
         picker1.highlightColor = UIColor(red: 255.0/255.0, green: 138.0/255.0, blue: 138.0/255.0, alpha: 1)
         picker1.darkColor = UIColor.darkGray
@@ -210,6 +215,7 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
             self.LeavingLabel.text = formatter.string(from: date)
+       self.leavDat = date
         }
         picker1.delegate = self
         picker1.show()
@@ -265,21 +271,147 @@ extension MapViewController1: CLLocationManagerDelegate {
    // fetchNearbyPlaces(coordinate: location.coordinate)
    print("loca2")
    
-    let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
+   
+    
+    let geoFirestoreRef = Firestore.firestore().collection("marker")
+
+    
+    
     let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
+   
+    
     let geo = geoFirestore.query(withCenter: location, radius: 1000)
     geo.observe(.documentEntered, with: { (key, location) in
         let Marker = GMSMarker()
-        Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
-        Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
-        Marker.map = self.mapView
-        print("loca1")
+        let key:String  = key!
+        self.db.collection("ActiveParkings").getDocuments() { (querySnapshot1, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                for document in querySnapshot1!.documents {
+                    let doc = document.documentID
+                   
+                    print(document,"mmmm")
+                    
+                    
+                    let g = self.db.collection("ActiveParkings").document(doc).collection("parkingSpace").document(key).getDocument { (querySnaps, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                           let date = Date()
+                            if let doc2 =  querySnaps, doc2.exists{
+                               print(doc2.data(),"mieeee")
+                                var numberofSpa:Int = 0
+                                var bookSpac:Int = 0
+                                
+                                    if let numberofSpaces = doc2.data()!["numberofSpaces"] as? String {
+                                        let spaceVal:Int = Int(numberofSpaces)!
+                                      
+                                        if let leaveData = doc2.data()!["leaveData"] as? Date {
+                                         
+                                            
+                                            let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!
+                                            
+                                            if leaveData.compare(date) == .orderedAscending{
+                                                
+                                                
+                                                
+                                                Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
+                                                Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+                                                Marker.map = self.mapView
+                                                print("PReeeevv")
+                                                
+                                                
+                                            }else {
+                                                if spaceVal > bookSpace{
+                                                    Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
+                                                    Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+                                                    Marker.map = self.mapView
+                                                   }
+                                                
+                                            }
+                                            
+                                            // let password = document.data()["password"] as? String
+                                            
+                                          
+                                            
+                                            
+                                            print("thissss",numberofSpaces,leaveData,bookSpace)
+                                            
+                                        }
+                                    }
+                                    
+//                                    var numberofSpa:Int = 0
+//                                    var bookSpac:Int = 0
+//
+//                                    if d.key == "numberofSpaces"{
+//                                        let spaceVal:Int = Int(d.value as! String)!
+//                                        numberofSpa = spaceVal
+//
+//                                    }
+//
+//                                    if d.key == "bookSpace"{
+//                                          if numberofSpa > bookSpac{
+//                                        let bookVal:Int = d.value as! Int
+//                                        bookSpac = bookVal
+//                                    print("ye chaaal")
+//                                    }
+//
+//
+//                                    }
+//                                    print(numberofSpa,bookSpac,"vicc")
+                                    
+//                                    if  d.key == "leaveData"{
+//                                       print(d.key.count,"dkacount")
+//
+//                                        let d2 = d.value as! Date
+//                                     // add date for compare in here
+////
+//                                        if d2.compare(date) == .orderedAscending{
+//
+//
+//
+//                                            Marker.icon = self.imageWithImage(image: #imageLiteral(resourceName: "parking-sign"), scaledToSize: CGSize(width: 40, height: 40))
+//                                            Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
+//                                            Marker.map = self.mapView
+//                                            print("PReeeevv")
+//
+//
+//                                        }else {
+//
+//
+//                                        }
+
+                                //    }
+                            
+                            
+                            
+                                    
+                                
+                           
+                            print(self.db.collection("ActiveParkings").document("\(document)").collection("parkingSpace").document(key).documentID)
+                            print(doc2,"ccc")   }
+                        
+                    }
+                        
+                }
+                    
+                
+            }
+            print("mark is gettt")
+            }}
         
-        print(Marker.userData,"karachi")
+        //
+       
         
         
         
     })
+        
+        
+    
+    
   }
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
@@ -331,16 +463,30 @@ extension MapViewController1: GMSMapViewDelegate {
                     guard let address = response?.firstResult(), let lines = address.lines else {
                         return
                     }
-                    print(address,"karachi")
-                  self.performSegue(withIdentifier: "booking", sender: self)
+                    
+                    
+                   
+                    
+                    DispatchQueue.main.async {
+                        
+                     if lines != nil {
+                       let data = Firestore.firestore().collection("marker")
+                        let lin = lines.first!
+                      
+                        self.s(adrres: lin)
+                        print(address,"karachi")}
+                  //  self.detailAddress = lines.first!
+                 //   self.performSegue(withIdentifier: "booking", sender: self)
                     
                 }
             
-            
+            }
          
         }
 
     }
+    
+    
     guard let placeMarker = marker as? PlaceMarker else {
         
         
@@ -367,6 +513,7 @@ extension MapViewController1: GMSMapViewDelegate {
   
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     tappedMarker = marker
+    
     mapCenterPinImage.fadeOut(0.25)
     return false
   }
@@ -425,5 +572,97 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    
+    func s(adrres:String){
+        let geoFirestoreRef = Firestore.firestore().collection("marker")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "booking") as! detailViewController
+        var numberofSpa:Int = 0
+        var bookSpac:Int = 0
+        
+      
+        
+        let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
+        let locatio = CLLocation(latitude: tappedMarker.position.latitude, longitude: tappedMarker.position.longitude)
+        
+        let geo = geoFirestore.query(withCenter: locatio, radius: 1000)
+        geo.observe(.documentEntered, with: { (key, location) in
+            let Marker = GMSMarker()
+            let key:String  = key!
+            self.db.collection("ActiveParkings").getDocuments() { (querySnapshot1, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    for document in querySnapshot1!.documents {
+                        let doc = document.documentID
+                        
+                        print(document,"mmmm")
+                        
+                        
+                        let g = self.db.collection("ActiveParkings").document(doc).collection("parkingSpace").document(key).getDocument { (querySnaps, err) in
+                            if let err = err {
+                                print("Error getting documents: \(err)")
+                            } else {
+                                let date = Date()
+                                if let doc2 =  querySnaps, doc2.exists{
+                                    print(doc2.data(),"mieeee")
+                                    
+                                    
+                                    if let numberofSpaces = doc2.data()!["numberofSpaces"] as? String {
+                                        let spaceVal:Int = Int(numberofSpaces)!
+                                        
+                                        if let leaveData = doc2.data()!["leaveData"] as? Date {
+                                            
+                                            
+                                            let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!
+                                            
+                                          
+                                                if spaceVal > bookSpace{
+                                                  let val = "\(spaceVal - bookSpace)"
+                                                    
+                                                    if self.ariveDAt == nil || self.leavDat == nil {
+                                                        print("lineee",adrres)
+                                                        let formatter = DateFormatter()
+                                                        formatter.dateFormat = "dd/MM/yyyy"
+                                                        let firstDate = formatter.date(from: "10/08/1990")
+                                                        let secondDate = formatter.date(from: "10/08/1990")
+                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate:firstDate!,leaveDate:secondDate!, noOfSpaces: val)
+                                                        print("niii")
+                                                        self.present(destinationVC, animated: false, completion: nil)
+                                                    }else{
+                                                        if leaveData.compare(date) == .orderedAscending{
+                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: numberofSpaces)
+                                                        self.present(destinationVC, animated: false, completion: nil)
+                                                        
+                                                            print("niii2")}
+                                                    }
+                                                }else{
+                                                    print("niii3")
+//                                                    destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: "3")
+//                                                    self.present(destinationVC, animated: false, completion: nil)
+                                                    
+                                                    
+                                            }
+                                                
+                                           
+                                            
+                                           
+                                            
+                                        }
+                                    }
+                               
+                                  }
+                                
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                    print("mark is gettt")
+                }}
+            
+            
+        })
+    }
 }

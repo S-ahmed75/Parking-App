@@ -17,6 +17,11 @@ class EditTableViewController: UITableViewController {
     
     let db = Firestore.firestore()
     let uid = Auth.auth().currentUser?.uid
+    var spaceType = "Driveway"
+    var ownerType = "Individual"
+    var spaceWidth = "Normal"
+    var spaceID = ""
+    var userId = ""
     
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var City: UILabel!
@@ -44,10 +49,36 @@ class EditTableViewController: UITableViewController {
         
         self.tableView.allowsSelection = false
         
-        let geoFirestoreRef = Firestore.firestore().collection("ActiveParkings")
+         sideMenus()
+        
+        self.db.collection("Users").document(self.uid!).getDocument(completion: { (snaps, errr) in
+            if let doc2 =  snaps, doc2.exists{
+                print(doc2.data(),"mieeee")
+                for d in doc2.data()!{
+                    
+                    var numberofSpa:Int = 0
+                    var bookSpac:Int = 0
+                    
+                    if d.key == "userId"{
+                        let  u:String = d.value as! String
+                        self.userId = u
+                        
+                    }
+                }}
+        })
+        
+        
+        db.collection("Users").document(uid!).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                self.spaceID = document.data()!["SpaceId"] as! String
+          
+        
+        let geoFirestoreRef = Firestore.firestore().collection("marker")
         let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
-
-        geoFirestore.getLocation(forDocumentWithID: uid!) { (location: CLLocation?, error) in
+       
+                geoFirestore.getLocation(forDocumentWithID: self.spaceID) { (location: CLLocation?, error) in
             if (error != nil) {
                 print("An error occurred: \(error)")
             } else if (location != nil) {
@@ -64,9 +95,9 @@ class EditTableViewController: UITableViewController {
             }
         }
         
-
-        sideMenus()
-        db.collection("Users").document(uid!).getDocument { (document, error) in
+           
+       
+                self.db.collection("ActiveParkings").document(self.userId).collection("parkingSpace").document(self.spaceID).getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("Document data: \(dataDescription)")
@@ -110,7 +141,11 @@ class EditTableViewController: UITableViewController {
                 print("Document does not exist")
             }
         }
-
+            }
+            
+        }
+        MapView.settings.scrollGestures = false
+        MapView.settings.zoomGestures = false
     }
     func sideMenus(){
         if revealViewController() != nil {
@@ -138,13 +173,16 @@ class EditTableViewController: UITableViewController {
     @IBAction func TypeofSpaceButton(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"Driveway"])
+            self.spaceType = "Driveway"
+            
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"Garage"])
+            self.spaceType = "Garage"
+           
             print("2")
         case 2:
-            db.collection("Users").document(uid!).updateData(["SpaceType":"CarPark"])
+            self.spaceType = "CarPark"
+           
             print("3")
         default:
             break
@@ -153,10 +191,12 @@ class EditTableViewController: UITableViewController {
     @IBAction func widthSpaceButton(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["SpaceWidth":"Normal"])
+            self.spaceWidth = "Normal"
+            
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["SpaceWidth":"Narrow"])
+            self.spaceWidth = "Narrow"
+            
             print("2")
         default:
             break
@@ -167,10 +207,12 @@ class EditTableViewController: UITableViewController {
     @IBAction func OwnerType(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            db.collection("Users").document(uid!).updateData(["OwnerType":"Individual"])
+            self.ownerType = "Individual"
+            
             print("1")
         case 1:
-            db.collection("Users").document(uid!).updateData(["OwnerType":"Business"])
+            self.ownerType = "Business"
+            
             print("2")
             
         default:
@@ -181,11 +223,19 @@ class EditTableViewController: UITableViewController {
     }
     @IBAction func SaveButton(_ sender: Any) {
         if self.numberOfSpaces.text != "" && self.PricePerHour.text != "" && self.PricePerDay.text != "" && self.PricePerWeek.text != "" {
-            db.collection("Users").document(uid!).updateData(["numberofSpaces":self.numberOfSpaces.text!])
-            db.collection("Users").document(uid!).updateData(["pricePerHour":self.PricePerHour.text!])
-            db.collection("Users").document(uid!).updateData(["pricePerDay":self.PricePerDay.text!])
-            db.collection("Users").document(uid!).updateData(["pricePerWeek":self.PricePerWeek.text!])
+            
+            let user = ["SpaceType":self.spaceType,"OwnerType":self.ownerType,"SpaceWidth":self.spaceWidth,"numberofSpaces":self.numberOfSpaces.text!,"pricePerHour":self.PricePerHour.text!,"pricePerDay":self.PricePerDay.text!,"pricePerWeek":self.PricePerWeek.text!]
+            
+            self.db.collection("ActiveParkings").document(userId).collection("parkingSpace").document(self.spaceID).updateData(user) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                   
+                    print("Document successfully written!");
+                    
+                 
             _ = self.navigationController?.popViewController(animated: true)
+                }}
         }else{
             let alertVC = PMAlertController(title: "Something Empty", description: "Recheck all the fields and try again.", image: #imageLiteral(resourceName: "your-logo-here"), style: .alert)
             
@@ -199,8 +249,29 @@ class EditTableViewController: UITableViewController {
         
     }
     
-    
+     @IBAction func DeleteButton(_ sender: Any) {
 
+        let alertVC = PMAlertController(title: "Remove Space", description: "Do you want to delete this space?.", image: #imageLiteral(resourceName: "your-logo-here"), style: .alert)
+        
+        alertVC.addAction(PMAlertAction(title: "Delete", style: .default, action: { () -> Void in
+            let geoFirestoreRef = Firestore.firestore().collection("marker")
+            let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
+            geoFirestore.removeLocation(forDocumentWithID: self.spaceID, completion: { (error) in
+                if error != nil {
+                    print("error in delete")
+                }else{
+                    self.db.collection("ActiveParkings").document(self.userId).collection("parkingSpace").document(self.spaceID).delete()
+                      _ = self.navigationController?.popViewController(animated: true)
+                    print("deleted")
+                }
+                
+            });
+        }))
+        alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
+            print("Capture action Cancel")
+        }))
+        
+        self.present(alertVC, animated: true, completion: nil)
 
-
+    }
 }
