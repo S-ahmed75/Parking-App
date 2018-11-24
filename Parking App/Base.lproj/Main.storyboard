@@ -491,39 +491,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any bookings yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVM-y9-2kb">
-                                <rect key="frame" x="83.666666666666686" y="389.66666666666669" width="247" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-6p-t3g">
-                                <rect key="frame" x="129.33333333333337" y="299.66666666666669" width="155.66666666666663" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-6q-kim">
-                                <rect key="frame" x="103.66666666666669" y="450.66666666666669" width="207" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Find Parkings">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Hu0-aW-zU8" kind="show" customClass="SWRevealViewControllerSeguePushController" id="u6X-ar-WsK"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tK-mC-ULd">
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You don't have any bookings yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVM-y9-2kb">
+                                        <rect key="frame" x="-4" y="53" width="247" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parking App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qa-6p-t3g">
+                                        <rect key="frame" x="42" y="46" width="155.66666666666663" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-6q-kim">
+                                        <rect key="frame" x="16" y="49" width="207" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Find Parkings">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Hu0-aW-zU8" kind="show" customClass="SWRevealViewControllerSeguePushController" id="u6X-ar-WsK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NVM-y9-2kb" firstAttribute="centerX" secondItem="3xM-Ej-Z3y" secondAttribute="centerX" id="6iH-Li-Ezk"/>
-                            <constraint firstItem="Uhi-6q-kim" firstAttribute="top" secondItem="NVM-y9-2kb" secondAttribute="bottom" constant="40" id="GTx-Tn-vUR"/>
-                            <constraint firstItem="Uhi-6q-kim" firstAttribute="width" secondItem="uSG-0J-L6q" secondAttribute="width" multiplier="0.5" id="J0n-Ll-A1I"/>
-                            <constraint firstItem="Uhi-6q-kim" firstAttribute="centerX" secondItem="3xM-Ej-Z3y" secondAttribute="centerX" id="LRo-Gb-YLL"/>
-                            <constraint firstItem="7qa-6p-t3g" firstAttribute="centerX" secondItem="3xM-Ej-Z3y" secondAttribute="centerX" id="NWd-uw-SEK"/>
-                            <constraint firstItem="NVM-y9-2kb" firstAttribute="centerY" secondItem="3xM-Ej-Z3y" secondAttribute="centerY" id="SXI-ZM-KDt"/>
-                            <constraint firstItem="NVM-y9-2kb" firstAttribute="top" secondItem="7qa-6p-t3g" secondAttribute="bottom" constant="54" id="bfi-rm-NJX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3xM-Ej-Z3y"/>
                     </view>
                     <navigationItem key="navigationItem" id="0wp-8p-OFf">
@@ -954,7 +955,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8z-cR-bL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="2291"/>
+            <point key="canvasLocation" x="2636.231884057971" y="2290.7608695652175"/>
         </scene>
         <!--Recieved Bookings View Controller-->
         <scene sceneID="xPq-kz-Aik">
@@ -995,7 +996,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Irm-Rr-sA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2443" y="2014"/>
+            <point key="canvasLocation" x="3349.275362318841" y="2013.5869565217392"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="Tji-jw-T9b">
@@ -1134,11 +1135,11 @@
                         <outlet property="name" destination="4pO-SG-wQK" id="uty-Ri-CmY"/>
                         <outlet property="reciedBookings" destination="ItW-ZY-6Vz" id="lbT-KB-mAk"/>
                         <outlet property="rentYourspace" destination="hZw-ZG-rWE" id="JKp-fe-603"/>
-                        <segue destination="aH1-or-GSu" kind="custom" identifier="bookings" customClass="SWRevealViewControllerSeguePushController" id="OuI-0i-ugt"/>
                         <segue destination="U5t-Sk-xzr" kind="custom" identifier="profile" customClass="SWRevealViewControllerSeguePushController" id="zBe-ly-aAi"/>
                         <segue destination="MVd-G0-beR" kind="custom" identifier="Rent" customClass="SWRevealViewControllerSeguePushController" id="cGB-YC-Jff"/>
                         <segue destination="FdT-4p-NIl" kind="show" identifier="log" id="beG-jx-m5x"/>
                         <segue destination="Hu0-aW-zU8" kind="custom" identifier="mainView" customClass="SWRevealViewControllerSeguePushController" id="HwW-5O-BrD"/>
+                        <segue destination="PPX-ez-KKs" kind="custom" identifier="bookings" customClass="SWRevealViewControllerSeguePushController" id="CIo-xd-MUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qb-bD-1Tn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2211,7 +2212,7 @@
                                 <rect key="frame" x="20" y="262" width="374" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBc-XT-6z2">
                                 <rect key="frame" x="20" y="281" width="374" height="1"/>
@@ -2944,7 +2945,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qw-zn-YgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3232.5" y="2290"/>
+            <point key="canvasLocation" x="4139.130434782609" y="2289.945652173913"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xOM-NC-2lP">
@@ -3018,6 +3019,208 @@
             </objects>
             <point key="canvasLocation" x="-1459" y="465"/>
         </scene>
+        <!--Booked List Table View Controller-->
+        <scene sceneID="kae-Dh-OFR">
+            <objects>
+                <viewController id="kwP-oz-ftv" customClass="bookedListTableViewController" customModule="Parking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PBI-Mg-xzA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booked spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D04-aG-jLw">
+                                <rect key="frame" x="16" y="90" width="197" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcT-ug-aQd">
+                                <rect key="frame" x="16" y="134" width="145" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="hne-kI-l6s"/>
+                                </constraints>
+                                <state key="normal" title="Book another space?">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Hu0-aW-zU8" kind="show" id="3uw-Ne-TTM"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Below is a list of all your booked space." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZg-Sl-PMq">
+                                <rect key="frame" x="16" y="178" width="288" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NN7-48-3nc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-vf-eHg">
+                                <rect key="frame" x="16" y="286" width="288" height="814"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="219" id="c9r-6n-MTe" customClass="bookedListCellTableViewCell" customModule="Parking_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="219"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c9r-6n-MTe" id="pkb-yW-fxh">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="218.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="cfb-KI-mfB">
+                                                    <rect key="frame" x="16" y="40" width="60" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Not yet reviewed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebC-ni-2js">
+                                                    <rect key="frame" x="16" y="66" width="82" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                              " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqX-t5-NTe">
+                                                    <rect key="frame" x="16" y="86" width="203" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booked on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNH-lf-vpm">
+                                                    <rect key="frame" x="15" y="11" width="78" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="7Kz-Kp-FkT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCL-SZ-N5y">
+                                                    <rect key="frame" x="96" y="10" width="179" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYi-8w-grz">
+                                                    <rect key="frame" x="16" y="114" width="256" height="24"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="Cancel Booking">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cancelBooking:" destination="c9r-6n-MTe" eventType="touchUpInside" id="P3h-Zq-h29"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DCL-SZ-N5y" firstAttribute="leading" secondItem="DNH-lf-vpm" secondAttribute="trailing" constant="3" id="4RH-cu-lYa"/>
+                                                <constraint firstItem="cfb-KI-mfB" firstAttribute="top" secondItem="pkb-yW-fxh" secondAttribute="topMargin" constant="29" id="6gE-fk-m9H"/>
+                                                <constraint firstItem="cfb-KI-mfB" firstAttribute="top" secondItem="DNH-lf-vpm" secondAttribute="bottom" constant="11" id="89G-B1-L3i"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DCL-SZ-N5y" secondAttribute="trailing" constant="-3" id="ByU-aB-Xck"/>
+                                                <constraint firstItem="cfb-KI-mfB" firstAttribute="leading" secondItem="pkb-yW-fxh" secondAttribute="leadingMargin" id="Jkz-7b-Jnq"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ebC-ni-2js" secondAttribute="trailingMargin" id="OSb-YG-TpN"/>
+                                                <constraint firstItem="hqX-t5-NTe" firstAttribute="top" secondItem="DCL-SZ-N5y" secondAttribute="bottom" constant="55" id="P4e-07-j8P"/>
+                                                <constraint firstItem="bYi-8w-grz" firstAttribute="trailing" secondItem="pkb-yW-fxh" secondAttribute="trailingMargin" id="P7k-DQ-0dH"/>
+                                                <constraint firstItem="DNH-lf-vpm" firstAttribute="leading" secondItem="pkb-yW-fxh" secondAttribute="leadingMargin" constant="-1" id="ToK-e1-DIV"/>
+                                                <constraint firstItem="bYi-8w-grz" firstAttribute="leading" secondItem="pkb-yW-fxh" secondAttribute="leadingMargin" id="U4T-Dh-8eG"/>
+                                                <constraint firstItem="hqX-t5-NTe" firstAttribute="top" secondItem="ebC-ni-2js" secondAttribute="bottom" constant="8" id="boZ-KO-bwp"/>
+                                                <constraint firstItem="ebC-ni-2js" firstAttribute="leading" secondItem="pkb-yW-fxh" secondAttribute="leadingMargin" id="iKH-DW-2qt"/>
+                                                <constraint firstItem="DNH-lf-vpm" firstAttribute="centerY" secondItem="DCL-SZ-N5y" secondAttribute="centerY" id="mT9-5B-xzE"/>
+                                                <constraint firstItem="ebC-ni-2js" firstAttribute="top" secondItem="cfb-KI-mfB" secondAttribute="bottom" constant="8" id="mjy-qw-Cke"/>
+                                                <constraint firstItem="bYi-8w-grz" firstAttribute="top" secondItem="hqX-t5-NTe" secondAttribute="bottom" constant="8" id="nC0-iR-stQ"/>
+                                                <constraint firstItem="hqX-t5-NTe" firstAttribute="leading" secondItem="pkb-yW-fxh" secondAttribute="leadingMargin" id="vm8-PJ-kuU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="address" destination="ebC-ni-2js" id="aeF-ZA-OaV"/>
+                                            <outlet property="bookingDate" destination="DCL-SZ-N5y" id="Jjc-jF-U9I"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCX-lm-rVE">
+                                <rect key="frame" x="0.0" y="278" width="320" height="822"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5U-Qa-afc">
+                                        <rect key="frame" x="82.333333333333329" y="93" width="155.66666666666669" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any bookings yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TP-zW-FuR">
+                                        <rect key="frame" x="36" y="64" width="247" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g5U-Qa-afc" firstAttribute="top" secondItem="8TP-zW-FuR" secondAttribute="bottom" constant="8" id="96T-qw-2jM"/>
+                                    <constraint firstItem="8TP-zW-FuR" firstAttribute="centerX" secondItem="g5U-Qa-afc" secondAttribute="centerX" id="X3b-Ob-yvf"/>
+                                    <constraint firstItem="g5U-Qa-afc" firstAttribute="centerX" secondItem="lCX-lm-rVE" secondAttribute="centerX" id="rhA-H7-fE0"/>
+                                    <constraint firstItem="8TP-zW-FuR" firstAttribute="top" secondItem="lCX-lm-rVE" secondAttribute="top" constant="64" id="vA7-e0-AGU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lCX-lm-rVE" firstAttribute="top" secondItem="vZg-Sl-PMq" secondAttribute="bottom" id="2Pj-a4-p4O"/>
+                            <constraint firstItem="vZg-Sl-PMq" firstAttribute="top" secondItem="YcT-ug-aQd" secondAttribute="bottom" constant="8" symbolic="YES" id="2uD-Ua-aBg"/>
+                            <constraint firstItem="5O8-4g-6GT" firstAttribute="bottom" secondItem="lCX-lm-rVE" secondAttribute="bottom" id="9X2-Qb-BG5"/>
+                            <constraint firstItem="rc8-vf-eHg" firstAttribute="top" secondItem="vZg-Sl-PMq" secondAttribute="bottom" constant="8" symbolic="YES" id="GZA-Rg-Q1x"/>
+                            <constraint firstItem="vZg-Sl-PMq" firstAttribute="leading" secondItem="YcT-ug-aQd" secondAttribute="leading" id="J8f-wN-vbp"/>
+                            <constraint firstItem="vZg-Sl-PMq" firstAttribute="leading" secondItem="rc8-vf-eHg" secondAttribute="leading" id="L8l-ul-Ktr"/>
+                            <constraint firstItem="YcT-ug-aQd" firstAttribute="top" secondItem="D04-aG-jLw" secondAttribute="bottom" constant="8" id="Lfe-6w-gqK"/>
+                            <constraint firstItem="YcT-ug-aQd" firstAttribute="leading" secondItem="5O8-4g-6GT" secondAttribute="leading" constant="16" id="ZGP-Kz-t1v"/>
+                            <constraint firstItem="vZg-Sl-PMq" firstAttribute="trailing" secondItem="rc8-vf-eHg" secondAttribute="trailing" id="di1-pj-Ojq"/>
+                            <constraint firstItem="D04-aG-jLw" firstAttribute="top" secondItem="5O8-4g-6GT" secondAttribute="top" constant="26" id="gOE-YY-tuS"/>
+                            <constraint firstItem="rc8-vf-eHg" firstAttribute="bottom" secondItem="5O8-4g-6GT" secondAttribute="bottom" id="gyN-xg-YJT"/>
+                            <constraint firstItem="D04-aG-jLw" firstAttribute="leading" secondItem="5O8-4g-6GT" secondAttribute="leading" constant="16" id="mYv-x3-mH6"/>
+                            <constraint firstItem="5O8-4g-6GT" firstAttribute="trailing" secondItem="lCX-lm-rVE" secondAttribute="trailing" id="pN3-mw-j5p"/>
+                            <constraint firstItem="lCX-lm-rVE" firstAttribute="leading" secondItem="5O8-4g-6GT" secondAttribute="leading" id="s02-Qa-ZZE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D04-aG-jLw" secondAttribute="trailing" constant="20" symbolic="YES" id="wWG-Rc-5Fc"/>
+                            <constraint firstItem="vZg-Sl-PMq" firstAttribute="trailing" secondItem="PBI-Mg-xzA" secondAttribute="trailingMargin" id="wdS-1B-twr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5O8-4g-6GT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iSa-hY-jM0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="reveal-icon" id="80i-TA-a1t"/>
+                    </navigationItem>
+                    <size key="freeformSize" width="320" height="1100"/>
+                    <connections>
+                        <outlet property="menu" destination="80i-TA-a1t" id="9tk-yu-mPt"/>
+                        <outlet property="noDataView" destination="lCX-lm-rVE" id="oWg-F6-Bge"/>
+                        <outlet property="tableView" destination="rc8-vf-eHg" id="qrb-Wb-5qe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K89-9R-2Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769.5652173913045" y="3116.576086956522"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dbT-G4-i15">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PPX-ez-KKs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P1F-sV-wMh">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kwP-oz-ftv" kind="relationship" relationship="rootViewController" id="eoD-ct-KMI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCD-Mz-YoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="2239"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dollar-symbol" width="512" height="512"/>
@@ -3029,10 +3232,10 @@
         <image name="reveal-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HwW-5O-BrD"/>
-        <segue reference="GOk-vY-Hp6"/>
+        <segue reference="3uw-Ne-TTM"/>
+        <segue reference="beG-jx-m5x"/>
         <segue reference="dFB-PE-fe0"/>
-        <segue reference="Ugv-d9-dCi"/>
+        <segue reference="MQc-wM-7J8"/>
         <segue reference="55x-W4-iwH"/>
     </inferredMetricsTieBreakers>
 </document>

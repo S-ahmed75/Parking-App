@@ -41,6 +41,8 @@
 		A332C7B52199AD5C002EA468 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A332C7B72199AD5C002EA468 /* Localizable.strings */; };
 		A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335E8A6218CB0F700A1B06F /* paymentViewController.swift */; };
 		A337EC622198AD1F00CAA696 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */; };
+		A3420F6F21A9940900AE2E3B /* bookedListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3420F6E21A9940900AE2E3B /* bookedListCellTableViewCell.swift */; };
+		A3420F7121A9943D00AE2E3B /* bookedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */; };
 		A34A3447219D544700B9A62C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34A3446219D544700B9A62C /* GoogleService-Info.plist */; };
 		A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353F3CA219AF1E600CB4E93 /* constant.swift */; };
 		A3A01956218B61E4006E3786 /* L102Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01954218B61E4006E3786 /* L102Language.swift */; };
@@ -120,6 +122,8 @@
 		A332C7BA2199BAB8002EA468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A335E8A6218CB0F700A1B06F /* paymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		A3420F6E21A9940900AE2E3B /* bookedListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookedListCellTableViewCell.swift; sourceTree = "<group>"; };
+		A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookedListTableViewController.swift; sourceTree = "<group>"; };
 		A34A3446219D544700B9A62C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A353F3CA219AF1E600CB4E93 /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		A3A01954218B61E4006E3786 /* L102Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L102Language.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				A32A3CEA219338C30058C5AC /* detailViewController.swift */,
 				A332C7AA2199AC2F002EA468 /* Main.storyboard */,
 				A335E8A6218CB0F700A1B06F /* paymentViewController.swift */,
+				A3420F6E21A9940900AE2E3B /* bookedListCellTableViewCell.swift */,
+				A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */,
 				9EAB2369215E45D50096B69F /* ManageSpaceViewController.swift */,
 				9EE0F0B1215F83A200989BB8 /* ManagespaceTableViewCell.swift */,
 				9EB0AE64214D17B6006F19DF /* TermsViewController.swift */,
@@ -630,6 +636,7 @@
 				9E6589F621491FD700D02227 /* MapViewControllerxxxx.swift in Sources */,
 				9EB0AE69214D2597006F19DF /* MenuViewController.swift in Sources */,
 				A3D8C73E218F4ABF00E0CDCA /* MarkerInfoView.swift in Sources */,
+				A3420F6F21A9940900AE2E3B /* bookedListCellTableViewCell.swift in Sources */,
 				A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */,
 				9EB0AE59214CEE22006F19DF /* roundView.swift in Sources */,
 				A32A3CFA219338C30058C5AC /* detailViewController.swift in Sources */,
@@ -637,6 +644,7 @@
 				A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */,
 				A3A01956218B61E4006E3786 /* L102Language.swift in Sources */,
 				9E62D8772158D9C400629CD2 /* ProfileViewController.swift in Sources */,
+				A3420F7121A9943D00AE2E3B /* bookedListTableViewController.swift in Sources */,
 				A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */,
 				A3D8C74C218F4B1300E0CDCA /* TypesTableViewController.swift in Sources */,
 				9EAB236C215E48360096B69F /* RecievedBookingsViewController.swift in Sources */,

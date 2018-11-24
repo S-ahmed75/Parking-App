@@ -90,11 +90,17 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     
     }
     override func viewWillAppear(_ animated: Bool) {
-       SVProgressHUD.show()
+        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
+        mapView.delegate = self
+        SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 3.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+       self.mapView.clear()
+        
         SVProgressHUD.dismiss()
     }
     func sideMenus(){
@@ -321,7 +327,13 @@ extension MapViewController1: CLLocationManagerDelegate {
                                                 Marker.position = CLLocationCoordinate2D(latitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!)
                                                 Marker.map = self.mapView
                                                 print("PReeeevv")
-                                                
+                                                let user = ["bookSpace":0] as [String : Any]
+                                                self.db.collection("ActiveParkings").document(doc).collection("parkingSpace").document(key).updateData(user) { errr in
+                                                    if let errr = errr {
+                                                        print("Error writing document: \(errr)")
+                                                    } else {
+                                                        print("not updatedddd")
+                                                    }}
                                                 
                                             }else {
                                                 if spaceVal > bookSpace{
@@ -617,7 +629,7 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                                             let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!
                                             
                                           
-                                                if spaceVal > bookSpace{
+                                            
                                                   let val = "\(spaceVal - bookSpace)"
                                                     
                                                     if self.ariveDAt == nil || self.leavDat == nil {
@@ -627,22 +639,15 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                                                         let firstDate = formatter.date(from: "10/08/1990")
                                                         let secondDate = formatter.date(from: "10/08/1990")
                                                         destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate:firstDate!,leaveDate:secondDate!, noOfSpaces: val)
-                                                        print("niii")
+                                                        
                                                         self.present(destinationVC, animated: false, completion: nil)
                                                     }else{
-                                                        if leaveData.compare(date) == .orderedAscending{
-                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: numberofSpaces)
+                                                       
+                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: val)
                                                         self.present(destinationVC, animated: false, completion: nil)
                                                         
-                                                            print("niii2")}
                                                     }
-                                                }else{
-                                                    print("niii3")
-//                                                    destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: "3")
-//                                                    self.present(destinationVC, animated: false, completion: nil)
-                                                    
-                                                    
-                                            }
+                                             
                                                 
                                            
                                             

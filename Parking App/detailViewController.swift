@@ -10,9 +10,10 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import FirebaseFirestore
+import Firebase
 import Geofirestore
 import GeoFire
-
+import SVProgressHUD
 
 class detailViewController: UIViewController {
     
@@ -24,6 +25,8 @@ class detailViewController: UIViewController {
     var ariveDAte:Date?
     var leavDate:Date?
     var noOfSpace = "0"
+    var bookingId = ""
+     let uid = Auth.auth().currentUser?.uid
     
     let db = Firestore.firestore()
     
@@ -34,6 +37,8 @@ class detailViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+       
+        
         let location = CLLocation(latitude: mark.position.latitude, longitude: mark.position.longitude)
         let geoFirestoreRef = Firestore.firestore().collection("marker")
         let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
@@ -73,8 +78,8 @@ class detailViewController: UIViewController {
                                     }else{
                                         if let document = snap, document.exists {
                                             if let numberofSpac = document.data()!["numberofSpaces"] as? String {
-                                               self.noOfSpace = numberofSpac
-                                                print("finnnn",self.noOfSpace)
+//                                               self.noOfSpace = numberofSpac
+//                                                print("finnnn",self.noOfSpace)
                                             }
                                             
                                             
@@ -98,7 +103,7 @@ class detailViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        loadView()
+        self.viewDidLoad()
     }
     
     func add(add:String, marker:GMSMarker,ariveDate:Date, leaveDate:Date,noOfSpaces:String){
@@ -131,7 +136,8 @@ class detailViewController: UIViewController {
             ariveDAte = nil
             leavDate = nil
         }else{
-                
+                SVProgressHUD.show()
+                bookingId = "\(db.collection("bookingId").document().documentID)"
                 let location = CLLocation(latitude: mark.position.latitude, longitude: mark.position.longitude)
                 let geoFirestoreRef = Firestore.firestore().collection("marker") 
                 let geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
@@ -145,7 +151,7 @@ class detailViewController: UIViewController {
                         
                         
                         let key:String  = key!
-                        let bookSpa:Int = Int(self.noOfSpace)!
+                        let bookSpa:Int = Int(self.noOfSpace)! + 1
                         self.db.collection("ActiveParkings").getDocuments() { (querySnapshot, err) in
                             if let err = err {
                                 print("Error getting documents: \(err)")
@@ -154,13 +160,24 @@ class detailViewController: UIViewController {
                                 for document in querySnapshot!.documents {
                                  let doc = document.documentID
                                     print(document,"mmmm")
-                                    let user = ["arriveData":self.ariveDAte,"leaveData":self.leavDate,"bookSpace":bookSpa] as [String : Any]
+                                    
+                                    let user = ["arriveData":self.ariveDAte,"leaveData":self.leavDate,"bookSpace":bookSpa,"bookingId":self.bookingId] as [String : Any]
                                     self.db.collection("ActiveParkings").document(doc).collection("parkingSpace").document(key).updateData(user) { errr in
                                         if let errr = errr {
  /*add dates now nothing else*/                          print("Error writing document: \(errr)")
                                         } else {
+                                           
+                                            let user2 = ["arriveData":self.ariveDAte,"leaveData":self.leavDate,"bookSpace":1,"spaceId":key,"address":self.addr,"bookerId":self.uid] as [String : Any];
+                                            self.db.collection("bookingId").document(self.bookingId).setData(user) { err in
+                                                if let err = err {
+                                                    print("Error writing document: \(err)")
+                                                } else {}
+                                            print(user2,"\(self.db.collection("bookingId").document(self.bookingId).setData(user2))","ttttt")
+                                            }
+                                            
+                                        SVProgressHUD.dismiss()
                                             let alert = UIAlertController(title: "Status", message: "Space has Booked", preferredStyle: UIAlertControllerStyle.alert)
-                                            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                                            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in self.dismiss(animated: true, completion: nil)})
                                             alert.addAction(ok)
                                             self.present(alert, animated:true, completion: nil)
                                             print("Document successfully writt")
