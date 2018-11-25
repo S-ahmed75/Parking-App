@@ -1,3 +1,4 @@
+
 //
 //  bookedListCellTableViewCell.swift
 //  Parking App
@@ -12,10 +13,12 @@ class bookedListCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var bookingDate: UILabel!
     @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var cancelBookingOutlet: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.cancelBookingOutlet.isHidden = true
         // Initialization code
     }
 

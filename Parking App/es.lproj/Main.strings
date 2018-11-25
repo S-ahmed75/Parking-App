@@ -500,5 +500,148 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "Y5n-re-nnP"; */
 "Y5n-re-nnP.text" = "buscando";
 
+/* Class = "UINavigationItem"; title = "Booking Detail"; ObjectID = "4f4-NM-sgH"; */
+"4f4-NM-sgH.title" = "Detalle de la reserva";
+
+/* Class = "UITextField"; placeholder = "Enter Leaving Date"; ObjectID = "5EY-Fx-xo1"; */
+"5EY-Fx-xo1.placeholder" = "Ingrese la fecha de salida";
+
+/* Class = "UILabel"; text = "Address:"; ObjectID = "5ZD-zH-SfH"; */
+"5ZD-zH-SfH.text" = "dirección:";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "7hA-xe-GzQ"; */
+"7hA-xe-GzQ.placeholder" = "Introducir la contraseña";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "80i-TA-a1t"; */
+"80i-TA-a1t.title" = "ít";
+
+/* Class = "UILabel"; text = "You don't have any bookings yet"; ObjectID = "8TP-zW-FuR"; */
+"8TP-zW-FuR.text" = "Aún no tienes reservas.";
+
+/* Class = "UILabel"; text = "Need help?"; ObjectID = "8wb-iz-x3e"; */
+"8wb-iz-x3e.text" = "¿Necesitas ayuda?";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "90Y-WO-8Wo"; */
+"90Y-WO-8Wo.text" = "dirección";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "BEl-oy-d36"; */
+"BEl-oy-d36.normalTitle" = "Iniciar sesión";
+/* Class = "UILabel"; text = "WHERE IS YOUR PARKING SPACE?"; ObjectID = "BLm-7a-Vxk"; */
+"BLm-7a-Vxk.text" = "¿Dónde está tu espacio de estacionamiento?";
+/* Class = "UILabel"; text = "Booked spaces"; ObjectID = "D04-aG-jLw"; */
+"D04-aG-jLw.text" = "Espacios reservados";
+/* Class = "UILabel"; text = "Date"; ObjectID = "DCL-SZ-N5y"; */
+"DCL-SZ-N5y.text" = "Fecha";
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "DJ6-JW-NIc"; */
+"DJ6-JW-NIc.normalTitle" = "Cancelar";
+/* Class = "UILabel"; text = "Booked on"; ObjectID = "DNH-lf-vpm"; */
+"DNH-lf-vpm.text" = "Reservado en";
+
+/* Class = "UILabel"; text = "No. of Spaces Available:"; ObjectID = "Emq-tY-Wo3"; */
+"Emq-tY-Wo3.text" = "No. de espacios disponibles:";
+
+/* Class = "UILabel"; text = "Arriving"; ObjectID = "Fq9-jz-uhc"; */
+"Fq9-jz-uhc.text" = "Llegando";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "H3b-qo-bnk"; */
+"H3b-qo-bnk.text" = "Título";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Lwf-HA-Gi5"; */
+"Lwf-HA-Gi5.text" = "0";
+
+/* Class = "UILabel"; text = "Card Number:"; ObjectID = "MXY-LI-56Y"; */
+"MXY-LI-56Y.text" = "Número de tarjeta:";
+/* Class = "UITextField"; placeholder = "Enter Leaving Date"; ObjectID = "NjF-Od-5tP"; */
+"NjF-Od-5tP.placeholder" = "Ingrese la fecha de salida";
+
+/* Class = "UIViewController"; title = "Modal view"; ObjectID = "OtK-0z-Q9q"; */
+"OtK-0z-Q9q.title" = "Vista modal";
+
+/* Class = "UILabel"; text = "To finish creating your Parking app account,"; ObjectID = "Qqj-VH-bmz"; */
+"Qqj-VH-bmz.text" = "Para terminar de crear tu cuenta de la aplicación Parking,";
+
+/* Class = "UINavigationItem"; title = "Choose Types"; ObjectID = "S0o-wg-itl"; */
+"S0o-wg-itl.title" = "Elegir tipos";
+/* Class = "UIButton"; normalTitle = "Signing In is important?"; ObjectID = "S7J-ng-2S0"; */
+"S7J-ng-2S0.normalTitle" = "Registrarse es importante?";
+
+/* Class = "UIButton"; normalTitle = "How to book space?"; ObjectID = "Thf-Nn-2jm"; */
+"Thf-Nn-2jm.normalTitle" = "¿Cómo reservar espacio?";
+
+/* Class = "UILabel"; text = "searching"; ObjectID = "Y5n-re-nnP"; */
+"Y5n-re-nnP.text" = "buscando";
+
+/* Class = "UIButton"; normalTitle = "Book another space?"; ObjectID = "YcT-ug-aQd"; */
+"YcT-ug-aQd.normalTitle" = "Reservar otro espacio?";
+
+/* Class = "UIButton"; normalTitle = "Cancel Booking"; ObjectID = "bYi-8w-grz"; */
+"bYi-8w-grz.normalTitle" = "Cancelar reserva";
+/* Class = "UILabel"; text = "Parking App"; ObjectID = "btr-eI-rdf"; */
+"btr-eI-rdf.text" = "App de aparcamiento";
+/* Class = "UIButton"; normalTitle = "How to get your current location?"; ObjectID = "bvN-xo-Ru2"; */
+"bvN-xo-Ru2.normalTitle" = "¿Cómo obtener su ubicación actual?";
+/* Class = "UITextField"; placeholder = "Card Number"; ObjectID = "c3g-l4-PP2"; */
+"c3g-l4-PP2.placeholder" = "Número de tarjeta";
+/* Class = "UILabel"; text = "Address"; ObjectID = "cfb-KI-mfB"; */
+"cfb-KI-mfB.text" = "Dirección";
+
+/* Class = "UILabel"; text = "Leaving"; ObjectID = "e0u-dS-imm"; */
+"e0u-dS-imm.text" = "Dejando";
+
+/* Class = "UITextField"; placeholder = "Enter your email "; ObjectID = "ejL-B4-b17"; */
+"ejL-B4-b17.placeholder" = "Introduce tu correo electrónico ";
+
+/* Class = "UILabel"; text = "Parking App"; ObjectID = "g5U-Qa-afc"; */
+"g5U-Qa-afc.text" = "App de aparcamiento";
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\""; ObjectID = "gd1-ds-ZPt"; */
+"gd1-ds-ZPt.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.                                                                                                                        \"                                                                                                   \"                  \"your agreement here\"";
+
+/* Class = "UITextField"; placeholder = "Enter Arrving Date"; ObjectID = "hfr-i2-YN4"; */
+"hfr-i2-YN4.placeholder" = "Ingrese la fecha de llegada";
+/* Class = "UILabel"; text = "                                              "; ObjectID = "hqX-t5-NTe"; */
+"hqX-t5-NTe.text" = "                                              ";
+
+/* Class = "UIButton"; normalTitle = "Direction"; ObjectID = "kVE-yc-7l7"; */
+"kVE-yc-7l7.normalTitle" = "Dirección";
+
+/* Class = "UILabel"; text = "Payment Options"; ObjectID = "m7f-4Q-asC"; */
+"m7f-4Q-asC.text" = "Opciones de pago";
+/* Class = "UITextField"; placeholder = "Enter your last name"; ObjectID = "mWM-6X-Qrw"; */
+"mWM-6X-Qrw.placeholder" = "Ingresa tu apellido";
+
+/* Class = "UITextField"; placeholder = "Enter your first name"; ObjectID = "oA6-ow-oMc"; */
+"oA6-ow-oMc.placeholder" = "Ponga su primer nombre";
+
+/* Class = "UITextField"; placeholder = "Enter Arrving Date"; ObjectID = "pwD-0D-gSx"; */
+"pwD-0D-gSx.placeholder" = "Ingrese la fecha de llegada";
+/* Class = "UILabel"; text = "Arriving"; ObjectID = "qSI-qg-bvh"; */
+"qSI-qg-bvh.text" = "Llegando";
+
+/* Class = "UIBarButtonItem"; title = "Delete"; ObjectID = "raC-ar-jsE"; */
+"raC-ar-jsE.title" = "Borrar";
+
+/* Class = "UILabel"; text = "Personnel Details"; ObjectID = "uLB-6g-hK7"; */
+"uLB-6g-hK7.text" = "Detalles del personal";
+/* Class = "UILabel"; text = "Leaving"; ObjectID = "uUV-Oa-gN2"; */
+"uUV-Oa-gN2.text" = "Dejando";
+
+/* Class = "UILabel"; text = "Payment Options"; ObjectID = "vI9-Jd-ssc"; */
+"vI9-Jd-ssc.text" = "Opciones de pago";
+/* Class = "UITextView"; text = "Below is a list of all your booked space."; ObjectID = "vZg-Sl-PMq"; */
+"vZg-Sl-PMq.text" = "A continuación se muestra una lista de todos sus espacios reservados.";
+/* Class = "UILabel"; text = "you must agree to the above."; ObjectID = "vka-Ig-IxQ"; */
+"vka-Ig-IxQ.text" = "debes estar de acuerdo con lo anterior.";
+
+/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "ziJ-DS-f4j"; */
+"ziJ-DS-f4j.normalTitle" = "Paga";
+
+
+
+
+
+
+
+
+
 
 

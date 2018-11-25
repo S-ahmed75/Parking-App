@@ -315,8 +315,9 @@ extension MapViewController1: CLLocationManagerDelegate {
                                         let spaceVal:Int = Int(numberofSpaces)!
                                       
                                         if let leaveData = doc2.data()!["leaveData"] as? Date {
-                                         
-                                            
+                                            if let bookid = doc2.data()!["leaveData"] as? String{
+                                                    if leaveData.compare(date) == .orderedAscending{
+                                                        self.db.collection("bookingId").document(bookid).delete()}}
                                             let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!
                                             
                                             if leaveData.compare(date) == .orderedAscending{
@@ -332,7 +333,8 @@ extension MapViewController1: CLLocationManagerDelegate {
                                                     if let errr = errr {
                                                         print("Error writing document: \(errr)")
                                                     } else {
-                                                        print("not updatedddd")
+                                                        print("updatedddd")
+                                                        // self.db.collection("bookingId").document().delete()
                                                     }}
                                                 
                                             }else {

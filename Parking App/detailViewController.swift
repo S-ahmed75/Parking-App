@@ -103,7 +103,9 @@ class detailViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        self.noOfSpace = "0"
         self.viewDidLoad()
+        
     }
     
     func add(add:String, marker:GMSMarker,ariveDate:Date, leaveDate:Date,noOfSpaces:String){
@@ -167,7 +169,7 @@ class detailViewController: UIViewController {
  /*add dates now nothing else*/                          print("Error writing document: \(errr)")
                                         } else {
                                            
-                                            let user2 = ["arriveData":self.ariveDAte,"leaveData":self.leavDate,"bookSpace":1,"spaceId":key,"address":self.addr,"bookerId":self.uid] as [String : Any];
+                                            let user2 = ["arriveData":self.ariveDAte,"leaveData":self.leavDate,"bookSpace":1,"spaceId":key,"address":self.addr,"bookerId":self.uid,"bookingId":self.bookingId,"ownerId":doc,"numberofSpaces": self.noOfSpace] as [String : Any];
                                             self.db.collection("bookingId").document(self.bookingId).setData(user) { err in
                                                 if let err = err {
                                                     print("Error writing document: \(err)")

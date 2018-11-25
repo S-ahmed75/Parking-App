@@ -41,6 +41,8 @@
 		A332C7B52199AD5C002EA468 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A332C7B72199AD5C002EA468 /* Localizable.strings */; };
 		A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A335E8A6218CB0F700A1B06F /* paymentViewController.swift */; };
 		A337EC622198AD1F00CAA696 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */; };
+		A341065021AAC93000AF25CF /* answersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A341064F21AAC93000AF25CF /* answersViewController.swift */; };
+		A341065221AACB1200AF25CF /* helpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A341065121AACB1200AF25CF /* helpTableViewCell.swift */; };
 		A3420F6F21A9940900AE2E3B /* bookedListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3420F6E21A9940900AE2E3B /* bookedListCellTableViewCell.swift */; };
 		A3420F7121A9943D00AE2E3B /* bookedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */; };
 		A34A3447219D544700B9A62C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34A3446219D544700B9A62C /* GoogleService-Info.plist */; };
@@ -119,9 +121,11 @@
 		A332C7B22199AC4C002EA468 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A332C7B62199AD5C002EA468 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A332C7B82199AD60002EA468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A332C7BA2199BAB8002EA468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A335E8A6218CB0F700A1B06F /* paymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentViewController.swift; sourceTree = "<group>"; };
 		A337EC612198AD1E00CAA696 /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		A341064F21AAC93000AF25CF /* answersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answersViewController.swift; sourceTree = "<group>"; };
+		A341065121AACB1200AF25CF /* helpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpTableViewCell.swift; sourceTree = "<group>"; };
+		A341065421AB0D8200AF25CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A3420F6E21A9940900AE2E3B /* bookedListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookedListCellTableViewCell.swift; sourceTree = "<group>"; };
 		A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookedListTableViewController.swift; sourceTree = "<group>"; };
 		A34A3446219D544700B9A62C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				A3D8C749218F4B1300E0CDCA /* MapViewController1.swift */,
 				A3D8C74A218F4B1300E0CDCA /* TypesTableViewController.swift */,
 				7858E410219DADF000BE7F1B /* HelpViewController.swift */,
+				A341064F21AAC93000AF25CF /* answersViewController.swift */,
+				A341065121AACB1200AF25CF /* helpTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				9EE0F0B2215F83A200989BB8 /* ManagespaceTableViewCell.swift in Sources */,
 				9EAB236A215E45D50096B69F /* ManageSpaceViewController.swift in Sources */,
 				9E7753D22147F66F00F01830 /* LoginSingUpViewController.swift in Sources */,
+				A341065221AACB1200AF25CF /* helpTableViewCell.swift in Sources */,
 				9E9962F4215A56C1002C25A5 /* SelectAddressViewController.swift in Sources */,
 				78D15710219D71FB00F2FA00 /* EditTableViewController.swift in Sources */,
 				A3D8C74B218F4B1300E0CDCA /* MapViewController1.swift in Sources */,
@@ -639,6 +646,7 @@
 				A3420F6F21A9940900AE2E3B /* bookedListCellTableViewCell.swift in Sources */,
 				A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */,
 				9EB0AE59214CEE22006F19DF /* roundView.swift in Sources */,
+				A341065021AAC93000AF25CF /* answersViewController.swift in Sources */,
 				A32A3CFA219338C30058C5AC /* detailViewController.swift in Sources */,
 				A3D8C746218F4B0100E0CDCA /* GooglePlace.swift in Sources */,
 				A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */,
@@ -701,7 +709,7 @@
 			children = (
 				A332C7A92199AC2F002EA468 /* Base */,
 				A332C7AE2199AC3D002EA468 /* es */,
-				A332C7BA2199BAB8002EA468 /* en */,
+				A341065421AB0D8200AF25CF /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

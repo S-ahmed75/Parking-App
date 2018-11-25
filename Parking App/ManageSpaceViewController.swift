@@ -17,6 +17,10 @@ struct Parkings {
     var SpaceWidth:String
     var numberOfspaces:String
     var price:String
+    
+    
+    
+    
 }
 
 
