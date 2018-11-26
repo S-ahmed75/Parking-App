@@ -1457,6 +1457,9 @@
                         <outlet property="menu" destination="8cQ-3k-qEN" id="e5J-wg-6GJ"/>
                         <outlet property="pinImageVerticalConstraint" destination="8bE-sd-1ZA" id="Qhp-yJ-25G"/>
                         <outlet property="searchBarView" destination="fKe-BX-D5b" id="VK3-US-XPY"/>
+                        <segue destination="OtK-0z-Q9q" kind="popoverPresentation" identifier="booking" popoverAnchorView="8so-bR-lK0" id="Fu3-d4-Tb5">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="758-id-Tlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2006,7 +2009,7 @@
         <!--Modal view-->
         <scene sceneID="VQd-M1-Ddy">
             <objects>
-                <viewController storyboardIdentifier="booking" title="Modal view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OtK-0z-Q9q" customClass="detailViewController" customModule="Parking_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="booking" title="Modal view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OtK-0z-Q9q" customClass="detailViewController" customModule="Parking_App" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UQk-8F-dST"/>
                         <viewControllerLayoutGuide type="bottom" id="TkE-J8-yWX"/>
@@ -2133,7 +2136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6H-Fg-dsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4756.521739130435" y="1269.2934782608697"/>
+            <point key="canvasLocation" x="5663.768115942029" y="1269.2934782608697"/>
         </scene>
         <!--Payment View Controller-->
         <scene sceneID="9kB-PZ-hxO">
@@ -3229,7 +3232,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="cfb-KI-mfB">
-                                                    <rect key="frame" x="116.00000000000001" y="63" width="56.666666666666671" height="18"/>
+                                                    <rect key="frame" x="115.66666666666667" y="63" width="56.666666666666671" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.35294117650000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -3264,7 +3267,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCL-SZ-N5y">
-                                                    <rect key="frame" x="37" y="24" width="215" height="40"/>
+                                                    <rect key="frame" x="36.666666666666657" y="24" width="215" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="LjW-CH-8Ob"/>
                                                         <constraint firstAttribute="width" constant="215" id="tDd-7S-38f"/>

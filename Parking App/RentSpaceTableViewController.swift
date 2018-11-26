@@ -138,7 +138,9 @@ class RentSpaceTableViewController: UITableViewController,setLocat{
                             let date = Date().addingTimeInterval(-3600*60*60*24)
                             
                             
-                            let user = ["Phone":self.PhoneNumber.text!,"firstname":self.Fname.text!,"lastname":self.Lname.text!,"numberofSpaces":self.numberOfSpaces.text!,"address":self.selectAddress.text!,"SpaceType":self.spaceType,"OwnerType":self.ownerType,"SpaceWidth":self.spaceWidth,"arriveData":date,"leaveData":date] as [String : Any]
+                            let user = ["Phone":self.PhoneNumber.text!,"firstname":self.Fname.text!,"lastname":self.Lname.text!,"numberofSpaces":self.numberOfSpaces.text!,"address":self.selectAddress.text!,"SpaceType":self.spaceType,"OwnerType":self.ownerType,"SpaceWidth":self.spaceWidth,"arriveData":date,"leaveData":date,"bookSpace":0,"pricePerDay":"18","pricePerHour":"10","bookingId":"a"] as [String : Any]
+                            
+                           
                             
                             self.db.collection("ActiveParkings").document(self.userId).collection("parkingSpace").document(self.spaceId).setData(user) { err in
                                 if let err = err {

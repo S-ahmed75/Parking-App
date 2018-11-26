@@ -65,6 +65,15 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     var tappedMarker = GMSMarker()
     var detailAddress = ""
     var selected1 = false
+    var sendAddress = ""
+    var sendNoOfSpace = ""
+    var sendMarker = GMSMarker()
+    var sendARive: Date?
+    var sendLeav: Date?
+    var sendBookSpace = 0
+    
+    
+    
     var adres:String! {
         didSet{
             print(self.adres)
@@ -115,16 +124,23 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "booking" {
-            let dest = segue.destination as! detailViewController
+            let dest = segue.destination as!  detailViewController
           
+            dest.add(add: self.sendAddress, marker: self.sendMarker, ariveDate: self.sendARive!, leaveDate: self.sendLeav!, noOfSpaces: self.sendNoOfSpace , sendBookSpace: self.sendBookSpace)
             // dest.address.text = self.detailAddress
 //            dest.Selected = self.selected
 //            dest.selected1 = true
 //            dest.initLat = self.initLatitude
 //            dest.initLong = self.initLongitude
+           
             
         }
-        self.dismiss(animated: true, completion: nil)
+        self.sendAddress = ""
+        self.sendNoOfSpace = ""
+        self.sendLeav = nil
+        self.sendARive = nil
+        
+       
     }
   
   private func reverseGeocodeCoordinate(_ coordinate: CLLocationCoordinate2D) {
@@ -166,22 +182,23 @@ class MapViewController1: UIViewController, DateTimePickerDelegate {
     
     @IBAction func searchBar(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
         
         if L102Language.currentAppleLanguage() == "en" {
             
    autocompleteController.navigationItem.searchController?.searchBar.placeholder = "Search"
-         autocompleteController.delegate = self
+       
             print("otheee",L102Language.currentAppleLanguage())
-        present(autocompleteController, animated: true, completion: nil)
+      
         } else {
         print("otheeee")
-            autocompleteController.delegate = self
+            
             autocompleteController.navigationItem.searchController?.searchBar.placeholder = "Buscar"
-        present(autocompleteController, animated: true, completion: nil)
+       
         }
         
        
-        
+          present(autocompleteController, animated: true, completion: nil)
         
     }
     
@@ -554,9 +571,13 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
+        
+        
         self.Selected = true
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress!)")
+       self.initLat = place.coordinate.latitude
+        self.initLong = place.coordinate.longitude
         self.addressLabel.text = place.formattedAddress
         SVProgressHUD.dismiss()
         self.adres = place.formattedAddress!
@@ -589,9 +610,9 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
     func s(adrres:String){
         let geoFirestoreRef = Firestore.firestore().collection("marker")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "booking") as! detailViewController
-        var numberofSpa:Int = 0
-        var bookSpac:Int = 0
+       // let destinationVC = storyboard.instantiateViewController(withIdentifier: "booking") as! detailViewController
+       // var numberofSpa:Int = 0
+   //     var bookSpac:Int = 0
         
       
         
@@ -606,7 +627,8 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
-                    
+                    if self.tappedMarker.position.latitude == location?.coordinate.latitude
+                    {
                     for document in querySnapshot1!.documents {
                         let doc = document.documentID
                         
@@ -617,18 +639,22 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                             if let err = err {
                                 print("Error getting documents: \(err)")
                             } else {
-                                let date = Date()
+                               
+                               
+                                    let date = Date()
                                 if let doc2 =  querySnaps, doc2.exists{
                                     print(doc2.data(),"mieeee")
                                     
-                                    
-                                    if let numberofSpaces = doc2.data()!["numberofSpaces"] as? String {
-                                        let spaceVal:Int = Int(numberofSpaces)!
+                                    let add = doc2.data()!["address"] as! String
+                                    if doc2.documentID == key {
+                                        
+                                        if let numberofSpaces = doc2.data()!["numberofSpaces"] as? String {
+                                    let spaceVal:Int = Int(numberofSpaces)!
                                         
                                         if let leaveData = doc2.data()!["leaveData"] as? Date {
                                             
                                             
-                                            let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!
+                                            let bookSpace:Int = (doc2.data()!["bookSpace"] as! Int)
                                             
                                           
                                             
@@ -640,14 +666,32 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                                                         formatter.dateFormat = "dd/MM/yyyy"
                                                         let firstDate = formatter.date(from: "10/08/1990")
                                                         let secondDate = formatter.date(from: "10/08/1990")
-                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate:firstDate!,leaveDate:secondDate!, noOfSpaces: val)
+//                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate:firstDate!,leaveDate:secondDate!, noOfSpaces: val)
+                                                        self.sendAddress = adrres
+                                                        self.sendNoOfSpace = val
+                                                        self.sendLeav = secondDate!
+                                                        self.sendARive = firstDate!
+                                                        self.sendBookSpace = bookSpace
                                                         
-                                                        self.present(destinationVC, animated: false, completion: nil)
+                                                        self.sendMarker = self.tappedMarker
+                                                        if adrres == self.sendAddress{
+                                                            
+                                                            
+                                                            self.performSegue(withIdentifier: "booking", sender: nil)}
+//                                                        self.present(destinationVC, animated: false, completion: nil)
                                                     }else{
                                                        
-                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: val)
-                                                        self.present(destinationVC, animated: false, completion: nil)
-                                                        
+//                                                        destinationVC.add(add: adrres, marker:self.tappedMarker, ariveDate: self.ariveDAt!,leaveDate:self.leavDat!, noOfSpaces: val)
+//                                                        self.present(destinationVC, animated: false, completion: nil)
+                                                        self.sendAddress = adrres
+                                                        self.sendNoOfSpace = val
+                                                        self.sendLeav = self.leavDat!
+                                                        self.sendARive = self.ariveDAt!
+                                                        self.sendMarker = self.tappedMarker
+                                                        self.sendBookSpace = bookSpace
+                                                        if self.tappedMarker == self.sendMarker{
+                                                            self.performSegue(withIdentifier: "booking", sender: nil)}
+//
                                                     }
                                              
                                                 
@@ -657,9 +701,9 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                                             
                                         }
                                     }
-                               
-                                  }
+                                    }
                                 
+                            }
                             }
                             
                         }
@@ -667,7 +711,7 @@ extension MapViewController1: GMSAutocompleteViewControllerDelegate {
                         
                     }
                     print("mark is gettt")
-                }}
+                }    }}
             
             
         })

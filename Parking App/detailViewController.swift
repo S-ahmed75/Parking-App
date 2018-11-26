@@ -25,8 +25,10 @@ class detailViewController: UIViewController {
     var ariveDAte:Date?
     var leavDate:Date?
     var noOfSpace = "0"
+    var bookSpace = 0
     var bookingId = ""
-     let uid = Auth.auth().currentUser?.uid
+    
+    let uid = Auth.auth().currentUser?.uid
     
     let db = Firestore.firestore()
     
@@ -104,18 +106,20 @@ class detailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.noOfSpace = "0"
+        self.bookSpace = 0
         self.viewDidLoad()
+        print(noOfSpace,"detailllll")
         
     }
     
-    func add(add:String, marker:GMSMarker,ariveDate:Date, leaveDate:Date,noOfSpaces:String){
+    func add(add:String, marker:GMSMarker,ariveDate:Date, leaveDate:Date,noOfSpaces:String,sendBookSpace: Int){
         
      self.mark = marker
         self.addr = add
         self.ariveDAte = ariveDate
         self.leavDate = leaveDate
         self.noOfSpace = noOfSpaces
-       
+       self.bookSpace = sendBookSpace
         
     }
     @IBAction func paymentButtonTapped(sender: AnyObject) {
@@ -153,7 +157,7 @@ class detailViewController: UIViewController {
                         
                         
                         let key:String  = key!
-                        let bookSpa:Int = Int(self.noOfSpace)! + 1
+                        let bookSpa:Int = self.bookSpace + 1
                         self.db.collection("ActiveParkings").getDocuments() { (querySnapshot, err) in
                             if let err = err {
                                 print("Error getting documents: \(err)")
