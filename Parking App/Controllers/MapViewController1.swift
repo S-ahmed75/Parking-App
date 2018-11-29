@@ -332,7 +332,7 @@ extension MapViewController1: CLLocationManagerDelegate {
                                         let spaceVal:Int = Int(numberofSpaces)!
                                       
                                         if let leaveData = doc2.data()!["leaveData"] as? Date {
-                                            if let bookid = doc2.data()!["leaveData"] as? String{
+                                            if let bookid = doc2.data()!["bookingId"] as? String{
                                                     if leaveData.compare(date) == .orderedAscending{
                                                         self.db.collection("bookingId").document(bookid).delete()}}
                                             let bookSpace:Int = (doc2.data()!["bookSpace"] as? Int)!

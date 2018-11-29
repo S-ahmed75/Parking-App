@@ -1,27 +1,29 @@
-
 //
-//  bookedListCellTableViewCell.swift
+//  receivedBookingTableViewCell.swift
 //  Parking App
 //
-//  Created by sunny on 24/11/2018.
+//  Created by sunny on 27/11/2018.
 //  Copyright © 2018 Mohammad Ali Panhwar. All rights reserved.
 //
 
 import UIKit
 
-class bookedListCellTableViewCell: UITableViewCell {
+class receivedBookingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var bookingDate: UILabel!
+    @IBOutlet weak var dispDate: UILabel!
+    @IBOutlet weak var displayName: UILabel!
+    @IBOutlet weak var cancelBookingOutline: UIButton!
     @IBOutlet weak var endDate: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var cancelBookingOutlet: UIButton!
     @IBOutlet weak var tabView: UIView!
+     @IBOutlet weak var phone: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-     //   self.cancelBookingOutlet.isHidden = true
-      self.tabView.layer.cornerRadius = 7
         // Initialization code
+        self.cancelBookingOutline.isHidden = true
+        
+         self.tabView.layer.cornerRadius = 7
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,9 +31,6 @@ class bookedListCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func cancelBooking(_ sender: Any) {
-        
-        
-    }
-    
+
+    @IBOutlet weak var cancelButton: UIButton!
 }

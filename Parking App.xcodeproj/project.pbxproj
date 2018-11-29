@@ -47,6 +47,7 @@
 		A3420F7121A9943D00AE2E3B /* bookedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */; };
 		A34A3447219D544700B9A62C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A34A3446219D544700B9A62C /* GoogleService-Info.plist */; };
 		A353F3CB219AF1E600CB4E93 /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353F3CA219AF1E600CB4E93 /* constant.swift */; };
+		A359582D21AD2E400077648F /* receivedBookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359582C21AD2E400077648F /* receivedBookingTableViewCell.swift */; };
 		A3A01956218B61E4006E3786 /* L102Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01954218B61E4006E3786 /* L102Language.swift */; };
 		A3A01957218B61E4006E3786 /* L012Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A01955218B61E4006E3786 /* L012Localizer.swift */; };
 		A3D8C73E218F4ABF00E0CDCA /* MarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */; };
@@ -130,6 +131,8 @@
 		A3420F7021A9943D00AE2E3B /* bookedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookedListTableViewController.swift; sourceTree = "<group>"; };
 		A34A3446219D544700B9A62C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A353F3CA219AF1E600CB4E93 /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		A359582C21AD2E400077648F /* receivedBookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receivedBookingTableViewCell.swift; sourceTree = "<group>"; };
+		A37CE00821B044A10098B921 /* Parking App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Parking App.entitlements"; sourceTree = "<group>"; };
 		A3A01954218B61E4006E3786 /* L102Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L102Language.swift; sourceTree = "<group>"; };
 		A3A01955218B61E4006E3786 /* L012Localizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L012Localizer.swift; sourceTree = "<group>"; };
 		A3D8C73B218F4ABF00E0CDCA /* MarkerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerInfoView.swift; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 		9E7753A02147E9CB00F01830 /* Parking App */ = {
 			isa = PBXGroup;
 			children = (
+				A37CE00821B044A10098B921 /* Parking App.entitlements */,
 				78D1570D219D71FA00F2FA00 /* EditTableViewController.swift */,
 				78D1570C219D71FA00F2FA00 /* RentSpaceTableViewController.swift */,
 				78D1570E219D71FB00F2FA00 /* RentSpaceViewController.swift */,
@@ -225,6 +229,7 @@
 				9EAB236D215E52700096B69F /* ParkingTermsViewController.swift */,
 				A332C7B72199AD5C002EA468 /* Localizable.strings */,
 				9EAB236B215E48360096B69F /* RecievedBookingsViewController.swift */,
+				A359582C21AD2E400077648F /* receivedBookingTableViewCell.swift */,
 				A32A3CEA219338C30058C5AC /* detailViewController.swift */,
 				A332C7AA2199AC2F002EA468 /* Main.storyboard */,
 				A335E8A6218CB0F700A1B06F /* paymentViewController.swift */,
@@ -400,6 +405,11 @@
 					9E77539D2147E9CB00F01830 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9E7753B12147E9D200F01830 = {
 						CreatedOnToolsVersion = 9.4;
@@ -654,6 +664,7 @@
 				9E62D8772158D9C400629CD2 /* ProfileViewController.swift in Sources */,
 				A3420F7121A9943D00AE2E3B /* bookedListTableViewController.swift in Sources */,
 				A335E8A7218CB0F700A1B06F /* paymentViewController.swift in Sources */,
+				A359582D21AD2E400077648F /* receivedBookingTableViewCell.swift in Sources */,
 				A3D8C74C218F4B1300E0CDCA /* TypesTableViewController.swift in Sources */,
 				9EAB236C215E48360096B69F /* RecievedBookingsViewController.swift in Sources */,
 				78D15711219D71FB00F2FA00 /* RentSpaceViewController.swift in Sources */,
@@ -848,6 +859,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Parking App/Parking App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SUBZ24DP5B;
 				INFOPLIST_FILE = "Parking App/Info.plist";
@@ -871,6 +883,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Parking App/Parking App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SUBZ24DP5B;
 				INFOPLIST_FILE = "Parking App/Info.plist";
