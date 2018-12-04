@@ -34,6 +34,9 @@ PODS:
   - Firebase/Firestore (5.7.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 0.13.2)
+  - Firebase/Messaging (5.7.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.1.1)
   - FirebaseAnalytics (5.1.1):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -72,6 +75,11 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMessaging (3.1.1):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleUtilities/Reachability (~> 5.2)
+    - Protobuf (~> 3.1)
   - FirebaseUI/Auth (5.2.0):
     - Firebase/Auth (~> 5.0)
   - FirebaseUI/Facebook (5.2.0):
@@ -183,6 +191,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
+  - Firebase/Messaging
   - FirebaseUI/Facebook
   - FirebaseUI/Google
   - Geofirestore
@@ -213,6 +222,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseUI
     - GeoFire
     - Geofirestore
@@ -265,6 +275,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseFirestore: 7eec93809ad61e7ebe303089c5cc5efa63424b72
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebaseMessaging: 698c94dd1e3436346c29bb9c85dcdca4c4a0c30b
   FirebaseUI: 9dfa423b6f1b73737ae8ab62692c1c0a8886186d
   GeoFire: e3ae6f4be3f2466c3467ef6c1c203db3af935c59
   Geofirestore: ad548ea5e3c1ae595c746c7b796df5534d8202f3
@@ -292,6 +303,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 347320b89c9d370ae9a73fb47c97f7c44491c5fb
+PODFILE CHECKSUM: 53127ba38b50dd9b38c4f252fb48e2d4cbe4a63b
 
 COCOAPODS: 1.5.3
